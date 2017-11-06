@@ -29,6 +29,9 @@
   <version>1.0</version>
 
   <build>
+    <finalName>dream</finalName>
+    <defaultGoal>compile</defaultGoal>
+    
     <plugins>
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
