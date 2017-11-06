@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<#import "spring.ftl" as spring/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="add()">测试上传作品</button>
+<button onclick="getList()">测试作品列表</button>
+<button onclick="edit()">测试编辑作品信息</button>
+<button onclick="imgUpload()">测试上传图片</button>
+
+<div id="result"></div>
+<script src="/demo/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    function add() {
+        $.ajax({
+            type : "POST",
+            url : "/demo/add",
+            dataType : "json",
+            data : {
+                en_title : "test",     //英文标题
+                zh_title : "test",     //中文标题
+                type : 1,           //分类，一次定义为1,2,3,4,5
+                en_type : "chengshixingxiang",       //分类中文名称
+                zh_type : "城市形象",       //分类英文名称
+                en_label1 : "label",     //英文标签1
+                zh_label1 : "标签",      //中文标签1
+                en_label2 : "",
+                zh_label2 : "",
+                en_label3 : "",
+                zh_label3 : "",
+                en_descript : "description",      //英文表述
+                zh_descript : "描述",      //中文描述
+                imgUrl : "http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg",           //封面图片地址
+                dimension : 2,         //2维作品或者3维作品，值为2或3
+                isHomePage : 1,        //是否显示在首页1是，0否
+                num : 1,                //如果显示在首页填1-11数字，代表首页的位置，否则填0
+                productImgs : [         //数组，作品的内容图片,上传几张就有几张
+                    "http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg",
+                    "http://pic4.nipic.com/20091217/3885730_124701000519_2.jpg",
+                ]
+            },
+            success : function(data) {
+                console.log(data)
+                $("#result").empty();
+                $("#result").html(data)
+            }
+        });
+    }
+    function edit() {
+        $.ajax({
+            type: "GET",
+            url: "/demo/productInfo/1",            //这个1是产品的ID
+            dataType: "json",
+            data: {},
+            success: function (data) {
+                console.log(data)
+                $("#result").empty();
+                $("#result").html(data)
+            }
+        })
+    }
+    function getList() {
+        $.ajax({
+            type: "GET",
+            url: "/demo/getList",
+            dataType: "json",
+            data: {
+                type: 1,                    //见add解释
+                currentPage: 1,            //当前页
+                pageSize: 20                  //每页条数
+            },
+            success: function (data) {
+                console.log(data)
+                $("#result").empty();
+                $("#result").html(data)
+            }
+        })
+    }
+</script>
+</body>
+</html>
