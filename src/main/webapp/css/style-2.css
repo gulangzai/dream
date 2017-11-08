@@ -1,0 +1,203 @@
+/*
+ Theme Name: Wizard
+ Theme URI: http://wizard.beantownthemes.com/
+ Description: Fullpage Portfolio WordPress Theme
+ Author: Fialovy & BeantownThemes
+ Author URI: http://themeforest.net/user/BeantownThemes
+ Version: 2.4
+ License: GNU General Public License
+ Tags: fluid-layout, fixed-layout, translation-ready, microformats, rtl-language-support, dark, light, white, black, gray, one-column, two-columns, right-sidebar,  custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+ License URI: license.txt
+ */
+
+/* wordpress classes*/
+.wp-caption{}
+.wp-caption-text {}
+.alignleft{float:left; margin-right:10px;text-align:left;}
+.alignright{float:right; margin-left:10px;text-align:right;}
+.aligncenter {margin:auto;text-align:center;}
+.sticky {}
+.bypostauthor {}
+.gallery-caption {}
+.right{text-align:right;}
+.align_center{ text-align:center }
+
+.section .wpb_row{margin-bottom:0px;}
+.section .vc_col-sm-12{padding:0px;}
+
+.scroll_section.flex_bg .wpb_text_column{position:absolute;}
+.scroll_section .flexslider{z-index:-1;}
+
+.page-subtitle_right{
+    color: #fff;
+    border-bottom: rgba(255,255,255,0.4) solid 1px;
+    text-align: right;
+
+}
+.page-subtitle_right:before {
+    position: relative;
+    content: '';
+    left: 0;
+    bottom: 0;
+    margin-bottom: -1px;
+    width: 80px;
+    height: 1px;
+    background-color: rgba(255,255,255,1);
+
+    left: inherit;
+    right: 0;
+}
+
+.section .overlay{z-index:0;}
+
+.white_text *{color:#fff !important;}
+/* --- GAPS --- */
+
+.gap_0{ margin-bottom: 0 !important; }
+.gap_5{ margin-bottom: 5px !important; }
+.gap_10{ margin-bottom: 10px !important; }
+.gap_15{ margin-bottom: 15px !important; }
+.gap_20{ margin-bottom: 20px !important; }
+.gap_25{ margin-bottom: 25px !important; }
+.gap_30{ margin-bottom: 30px !important; }
+.gap_35{ margin-bottom: 35px !important; }
+.gap_40{ margin-bottom: 40px !important; }
+.gap_45{ margin-bottom: 45px !important; }
+.gap_50{ margin-bottom: 50px !important; }
+.gap_55{ margin-bottom: 55px !important; }
+.gap_60{ margin-bottom: 60px !important; }
+
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+.flex-caption div.button br,div.button p{display:none;}
+#flv_layout .wpb_row{margin-bottom:0px;}
+
+.portfolio-panel1 .portfolio-item {  margin-bottom: 0px;}
+
+h2.page-title:before,h3.page-title:before,h4.page-title:before,h5.page-title:before,h6.page-title:before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    margin-bottom: -1px;
+    width: 80px;
+    height: 1px;
+    background-color: rgba(71,71,71,1);
+}
+h2.page-title,h3.page-title,h4.page-title,h5.page-title,h6.page-title{
+    border-bottom: rgba(224,224,224,1) solid 1px;
+    position:relative;
+}
+.nop p {display:none;}
+.nopaddings {padding:0px !important;}
+
+.carousel-item .service-item br{display:none;}
+
+.aboutus-section .about-us-element i {
+    font-size: 140px;
+    color: #fff;
+}
+
+.aboutus-section blockquote {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.aboutus-section p {
+    margin:0
+}
+
+
+.flv_video .container-fluid,
+.flv_video .container-fluid > .wpb_row,
+.flv_video .container-fluid > .wpb_row > .wpb_column {height:100%;}
+
+#aboutus-section .container-fluid {
+    padding:0px;
+}
+#fullpage.normalScroll {
+    margin-bottom: -22px;
+}
+/* calendar widget */
+#wp-calendar, #wp-calendar tr {width: 100%; border:0 }
+#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+#wp-calendar thead { font-size: 10px; }
+#wp-calendar thead th { padding-bottom: 10px; }
+#wp-calendar tbody { color: #aaa; }
+#wp-calendar tbody td { background: #F9f9f9; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+th{text-align:center}
+#wp-calendar tbody .pad { background: none; }
+#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+
+/* hide labels */
+label.screen-reader-text {display:none}
+
+/* recent comments widget */
+span.comment-author-link {display:block}
+.widget ul li.recentcomments {font-weight:normal}
+.widget ul li.recentcomments a, .widget ul li.recentcomments .comment-author-link  {font-weight:bold}
+
+/* rss widget */
+.rsswidget img{display:none}
+a.rsswidget:hover{text-decoration:none}
+span.rss-date {display:block;font-weight:normal}
+.widget cite {font-weight:normal}
+
+/* text widget */
+.textwidget img {margin-bottom:10px}
+.textwidget .wp-caption img {margin-bottom:0px}
+
+.widget select {width:100%;max-width:100%}
+.hide_flv{display:none;}
+
+.fab.ripple a{width:100%;height:100%;display:block}
+
+.msg_close{
+    cursor:pointer;
+    padding: 0 4px;
+    height:10px;
+    background-color:red;
+    color:white;
+}
+
+@media only screen and (max-device-width: 580px) {
+    .owl_slide4 .portfolio-detail{
+        bottom:0px !important;
+    }
+}
+
+
+
+.portfolio-filter li.filter:after{
+    top:7px;
+}
+.portfolio-filter li.filter{
+    display: inline-block;
+}
+#fullpage .section{overflow:visible;}
+.button.orange {
+    background-color: #00ddb8;
+}
+.button.blue {
+    background-color: #00ACBA;
+}
+.margin-zero{
+    margin:0;
+}
+.padding-zero{
+    padding:0;
+}
+.wpb_gallery_slides.flexslider{
+    margin:0;
+    border:none;
+    border-radius:0;
+    box-shadow: none;
+}
+.portfolio-homepage .portfolio-filter{display:none;}
+.wpb_single_image a{
+    transition: all 0.2s ease-out 0s;
+}
+.wpb_single_image a:hover{
+    background-color:#222;
+}

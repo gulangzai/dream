@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台列表</title>
+    <link rel="stylesheet" id="thickbox-css" href="css/admin.css" type="text/css"/>
+    <link rel="stylesheet" id="olida-bootstrap-css" href="css/bootstrap.css?ver=4.7.7" type="text/css" media="all"/>
+</head>
+<body>
+<div class="des">
+    <div class="list-main">
+        <a href="javascript:;">未来设计</a>
+        <a class="active" href="javascript:;">作品列表</a>
+    </div>
+</div>
+<div class="des-main">
+    <div class="main-list">
+        <p class="title">作品列表>添加作品</p>
+        <div class="list-top clearfix">
+            <p class="one clearfix">
+                <span class="first">请选择作品类别（单选）：</span>
+                <span data-id="1" class="active">城市形象</span>
+                <span data-id="2">品牌策划</span>
+                <span data-id="3">品牌平面视觉</span>
+                <span data-id="4">品牌互联网视觉</span>
+                <span data-id="5">品牌空间视觉</span>
+            </p>
+            <p class="two">请选择作品标签（最多三个）：</p>
+            <p  data-id="1" class="three-1 tubi-none clearfix">
+                <span class="first">城市形象</span>
+                <span>景观</span>
+                <span>公共艺术</span>
+                <span>建筑</span>
+                <span>民居</span>
+                <span>特色小镇</span>
+            </p>
+            <p  data-id="2" class="three-2 tubi-none display-none clearfix">
+                <span class="first">品牌策划</span>
+                <span>市场调查</span>
+                <span>消费者研究</span>
+                <span>品牌定位</span>
+                <span>品牌命名</span>
+                <span>特色小镇</span>
+            </p>
+            <p  data-id="3" class="three-3 tubi-none display-none clearfix">
+                <span class="first">品牌平面视觉</span>
+                <span>景观</span>
+                <span>公共艺术</span>
+                <span>建筑</span>
+                <span>民居</span>
+                <span>特色小镇</span>
+            </p>
+            <p  data-id="4" class="three-4 tubi-none display-none clearfix">
+                <span class="first">品牌互联网视觉</span>
+                <span>景观</span>
+                <span>公共艺术</span>
+                <span>建筑</span>
+                <span>民居</span>
+                <span>特色小镇</span>
+            </p>
+            <p  data-id="5" class="three-5 tubi-none display-none clearfix">
+                <span class="first">品牌空间视觉</span>
+                <span>景观</span>
+                <span>公共艺术</span>
+                <span>建筑</span>
+                <span>民居</span>
+                <span>特色小镇</span>
+            </p>
+        </div>
+        <div class="list-middle">
+            <p class="furo clearfix">
+                <span class="color">作品标题</span>
+                <span class="input-1">
+                    <input type="text">
+                    <span>中文</span>
+                </span>
+                <span class="input-2">
+                    <input type="text">
+                    <span>英文</span>
+                </span>
+            </p>
+            <p class="furo clearfix">
+                <span  class="color">作品描述</span>
+                <span class="input-1">
+                    <textarea rows="8"></textarea>
+                    <span>中文</span>
+                </span>
+                <span class="input-2">
+                    <textarea rows="8"></textarea>
+                    <span>英文</span>
+                </span>
+            </p>
+            <div class="photo clearfix">
+                <div class="photo-left">
+                    <p class="tubi-p">
+                        <span class="color">作品封面</span>
+                        <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
+                    </p>
+                    <a href="javascript:;" class="a-upload-1">
+                        <input type="file" name="" id="">
+                        <img src="images/icon-jia.png">
+                    </a>
+                </div>
+                <div class="photo-right">
+                    <p class="tubi-p">
+                        <span  class="color">作品封面</span>
+                        <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
+                    </p>
+                    <a href="javascript:;" class="a-upload-1">
+                        <input type="file" name="" id="">
+                        <img src="images/icon-jia.png">
+                    </a>
+                </div>
+            </div>
+            <p class="photo-sctp">
+                <span class="color">上传作品图片</span>
+                <span>支持jpg、png、gif、mp4格式</span>
+            </p>
+            <p>
+                <a href="javascript:;" class="a-upload">
+                    <input type="file" name="" id="">点击这里上传文件
+                </a>
+            </p>
+            <div class="bottom-image clearfix">
+                <div class="image-li">
+                    <img src="images/2.jpg">
+                    <p>删除</p>
+                </div>
+                <div class="image-li">
+                    <img src="images/2.jpg">
+                    <p>删除</p>
+                </div>
+                <div class="image-li">
+                    <img src="images/2.jpg">
+                    <p>删除</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom-main">
+    <div class="main-bottom">
+        <p class="">
+            <span class="p-left">设置为首页作品</span>
+            <label class="tu"><input type="radio" name="radio">是</label>
+            <label><input type="radio" name="radio">否</label>
+            <span class="p-wz">放置位置</span>
+            <select>
+                <option>10</option>
+                <option>10</option>
+                <option>10</option>
+                <option>10</option>
+                <option>10</option>
+                <option>10</option>
+            </select>
+        </p>
+    </div>
+</div>
+<div class="bottom-bottom">
+    <div class="bottom-a clearfix">
+        <a href="javascript:;">确定</a>
+        <a class="teshu" href="javascript:;">取消</a>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
