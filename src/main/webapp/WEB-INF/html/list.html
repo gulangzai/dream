@@ -400,17 +400,17 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <ul class="tubi-ul clearfix">
-                                            <li data-id="1" class="active">ALL Work</li>
+                                            <li data-id="1" class="active"><a href="${base}/list">ALL Work</a></li>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="2">City Image</li>
+                                            <li data-id="2"><a href="${base}/list?type=1">City Image</a></li>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="3">Brand planning</li>
+                                            <li data-id="3"><a href="${base}/list?type=2">Brand planning</a></li>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="4">Brand Graphic vision</li>
+                                            <li data-id="4"><a href="${base}/list?type=3">Brand Graphic vision</a></li>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="5">Brand internet vision</li>
+                                            <li data-id="5"><a href="${base}/list?type=4">Brand internet vision</a></li>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="6">Brand space vision</li>
+                                            <li data-id="6"><a href="${base}/list?type=5">Brand space vision</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -419,9 +419,9 @@
                                        <#if list?? &&  (list?size > 0)>
                                             <#list list as item>
                                                 <div class="col-sm-4 main-li">
-                                                    <a href="javascript:;">
+                                                    <a href="${base}/productInfo/${item.id}">
                                                         <div class="top-image">
-                                                            <img src="${base}/images/q.png">
+                                                            <img src="${item.imgUrl}">
                                                         </div>
                                                         <div class="bottom-text">
                                                             <h4>${item.title!}</h4>
@@ -532,7 +532,7 @@
                                         </div>-->
                                     </div>
                                 </div>
-                                <div  data-id="2" class="container-fluid main-list display-none">
+                                <!--<div  data-id="2" class="container-fluid main-list display-none">
                                     <div class="row list-main">
                                         <div class="col-sm-4 main-li">
                                             <a href="javascript:;">
@@ -1046,7 +1046,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
