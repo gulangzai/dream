@@ -416,7 +416,22 @@
                                 </div>
                                 <div  data-id="1" class="container-fluid main-list">
                                     <div class="row list-main">
-                                        <div class="col-sm-4 main-li">
+                                       <#if list?? &&  (list?size > 0)>
+                                            <#list list as item>
+                                                <div class="col-sm-4 main-li">
+                                                    <a href="javascript:;">
+                                                        <div class="top-image">
+                                                            <img src="${base}/images/q.png">
+                                                        </div>
+                                                        <div class="bottom-text">
+                                                            <h4>${item.title!}</h4>
+                                                            <p>${item.label1!} &nbsp;&nbsp;${item.label2!} &nbsp;&nbsp;${item.label3!}</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </#list>
+                                        </#if>
+                                        <!--<div class="col-sm-4 main-li">
                                             <a href="javascript:;">
                                                 <div class="top-image">
                                                     <img src="${base}/images/q.png">
@@ -514,7 +529,7 @@
                                                     <p>Scenery</p>
                                                 </div>
                                             </a>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                                 <div  data-id="2" class="container-fluid main-list display-none">

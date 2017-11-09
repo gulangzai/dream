@@ -115,7 +115,7 @@ public class ProductController {
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
         model = productService.productInfo(lang,id, model);
         model.addAttribute("id",id);
-        return "detail";
+        return "details";
     }
 
 
