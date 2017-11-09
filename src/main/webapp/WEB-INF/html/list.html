@@ -400,23 +400,23 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <ul class="tubi-ul clearfix">
-                                            <li data-id="1" class="active"><a href="${base}/list">ALL Work</a></li>
+                                            <a href="javasciprt:list2(0)"><li data-id="1" class="active">ALL Work</li></a>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="2"><a href="${base}/list?type=1">City Image</a></li>
+                                            <a href="javasciprt:list2(1)"><li data-id="2">City Image</li></a>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="3"><a href="${base}/list?type=2">Brand planning</a></li>
+                                            <a href="javasciprt:list2(2)"><li data-id="3">Brand planning</li></a>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="4"><a href="${base}/list?type=3">Brand Graphic vision</a></li>
+                                            <a href="javasciprt:list2(3)"><li data-id="4">Brand Graphic vision</li></a>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="5"><a href="${base}/list?type=4">Brand internet vision</a></li>
+                                            <a href="javasciprt:list2(4)"><li data-id="5">Brand internet vision</li></a>
                                             <li class="tubi-li">/</li>
-                                            <li data-id="6"><a href="${base}/list?type=5">Brand space vision</a></li>
+                                            <a href="javasciprt:list2(5)"><li data-id="6">Brand space vision</li></a>
                                         </ul>
                                     </div>
                                 </div>
                                 <div  data-id="1" class="container-fluid main-list">
-                                    <div class="row list-main">
-                                       <#if list?? &&  (list?size > 0)>
+                                    <div class="row list-main" id="list2">
+                                     <!--  <#if list?? &&  (list?size > 0)>
                                             <#list list as item>
                                                 <div class="col-sm-4 main-li">
                                                     <a href="${base}/productInfo/${item.id}">
@@ -430,7 +430,7 @@
                                                     </a>
                                                 </div>
                                             </#list>
-                                        </#if>
+                                        </#if>-->
                                         <!--<div class="col-sm-4 main-li">
                                             <a href="javascript:;">
                                                 <div class="top-image">
@@ -1104,5 +1104,41 @@
 <script type="text/javascript" src="${base}/js/custom.js?ver=4.7.7"></script>
 <script type="text/javascript" src="${base}/js/js_composer_front.min.js?ver=5.0"></script>
 <script type="text/javascript" src="${base}/js/waypoints.min.js?ver=5.0"></script>
+<script>
+    $(function () {
+        list2(0);
+    })
+    function list2(type) {
+        $.ajax({
+            type: "GET",
+            url: "/dream/list2",
+            dataType: "json",
+            data: {
+                type: type
+            },
+            success: function (data) {
+                console.log(data)
+                var list2 = "";
+                $.each(data,function (i,n) {
+                    alert(n.id)
+                    list2 = list2 +  "<div class='col-sm-4 main-li'>"+
+                        "<a href='/dream/productInfo/'"+n.id+">"+
+                        "<div class='top-image'>"+
+                        "<img src='"+n.imgUrl+"'>"+
+                        "</div>"+
+                        "<div class='bottom-text'>"+
+                        "<h4>"+n.title+"</h4>"+
+                        "<p>"+n.label1+" &nbsp;&nbsp;"+n.label2+" &nbsp;&nbsp; "+n.label3+"</p>"+
+                        "</div>"+
+                        "</a>"+
+                        "</div>";
+                });
+
+                $("#list2").empty();
+                $("#list2").append(list2);
+            }
+        })
+    }
+</script>
 </body>
 </html>

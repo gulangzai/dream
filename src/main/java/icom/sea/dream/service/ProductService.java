@@ -42,6 +42,16 @@ public class ProductService {
         return model;
     }
 
+    public  List<RespProduct> list(String lang,Integer type) {
+        List<Product> list = productDao.list(type);
+        List<RespProduct> list2 = new ArrayList<RespProduct>();
+        for(Product product : list){
+            RespProduct respProduct = new RespProduct(lang,product);
+            list2.add(respProduct);
+        }
+       return list2;
+    }
+
     public Map<String,String> del(int id) {
         Map<String,String> map = new HashMap<String, String>();
         Product product = productDao.get(Product.class,id);

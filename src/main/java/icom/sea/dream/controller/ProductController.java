@@ -1,5 +1,6 @@
 package icom.sea.dream.controller;
 
+import icom.sea.dream.entity.resp.RespProduct;
 import icom.sea.dream.service.ProductService;
 import icom.sea.dream.util.ConfigUtil;
 import icom.sea.dream.util.IDGenertor;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -99,9 +101,16 @@ public class ProductController {
      */
     @RequestMapping("/list")
     public String list(@RequestParam(defaultValue = "1")Integer type, HttpSession session, Model model){
-        String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
-        model = productService.list(lang,type,model);
+       // String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
+        //model = productService.list(lang,type,model);
         return "list";
+    }
+
+    @RequestMapping("/list2")
+    @ResponseBody
+    public List<RespProduct> list2(Integer type, HttpSession session){
+        String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
+        return productService.list(lang,type);
     }
 
     /**
