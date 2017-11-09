@@ -21,19 +21,19 @@
         <div class="list-top clearfix">
             <ul class="clearfix">
                 <li>
-                    <a class="active" href="javascript:;">城市形象</a>
+                    <a class="active" href="javascript:list2(1)">城市形象</a>
                 </li>
                 <li>
-                    <a href="javascript:;">品牌策划</a>
+                    <a href="javascript:list2(2)">品牌策划</a>
                 </li>
                 <li>
-                    <a href="javascript:;">品牌平面视觉</a>
+                    <a href="javascript:list2(3)">品牌平面视觉</a>
                 </li>
                 <li>
-                    <a href="javascript:;">品牌互联网视觉</a>
+                    <a href="javascript:list2(4)">品牌互联网视觉</a>
                 </li>
                 <li>
-                    <a href="javascript:;">品牌空间视觉</a>
+                    <a href="javascript:list2(5)">品牌空间视觉</a>
                 </li>
             </ul>
             <a class="right-right" href="${base}/admin-add">添加作品</a>
@@ -51,22 +51,8 @@
                         <th style="width:210px;text-align: center;">操作</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    
-                    <#list list as product>  
-					    <tr class="top-tr">
-                        <th scope="row">${product_index+1} </th>
-                        <td><img src="${product.imgUrl}" style="width:85px; height:65px;"></td>
-                        <td>${product.title}</td>
-                        <td>${product.type}</td>
-                         <#if product.isHomePage==1>
-                            <td>是</td> 
-                         <#else>
-                            <td>否</td>
-                         </#if>
-                        <td><a href="javascript:;">查看</a><a href="javascript:;">编辑</a><a href="javascript:;">删除</a></td>
-                         </tr> 
-					</#list>  
+                    <tbody id="tbody">
+                  
 
                   
                     <tr class="top-tr">
@@ -132,4 +118,43 @@
     </div>
 </div>
 </body>
+
+<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
+<script>
+    $(function () {
+        list2(1);
+    })
+    function list2(type) {
+        $.ajax({
+            type: "GET",
+            url: "/dream/adminData",
+            dataType: "json",
+            data: {
+                type: type
+            },
+            success: function (data) {
+                console.log(data)
+                var list2 = "";
+                $.each(data,function (index,product) { 
+                    
+                    list2 = list2 + "<tr class='top-tr'>";
+                    list2 = list2 + "<th scope='row'>"+(index+1)+"</th>";
+                    list2 = list2 + "<td><img src='"+product.imgUrl+"' style='width:85px; height:65px;'></td>";
+                    list2 = list2 + "<td>"+product.title+"</td>";
+                    list2 = list2 + "<td>"+product.type+"</td>";
+                    if(product.isHomePage==1){
+                    	list2 = list2 + "<td>是</td>";
+                    }else{
+                    	list2 = list2 + "<td>否</td>";
+                    } 
+                    list2 = list2 + "<td><a href='javascript:;'>查看</a><a href='javascript:;'>编辑</a><a href='${base}/adminDelete/${product.id}'>删除</a></td>";
+                    list2 = list2 + "</tr>";
+                }); 
+                $("#tbody").empty();
+                $("#tbody").append(list2);
+            }
+        })
+    }
+</script>
+
 </html>
