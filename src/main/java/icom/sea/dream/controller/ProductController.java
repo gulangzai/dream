@@ -148,6 +148,16 @@ public class ProductController {
 */
 
 
+    @RequestMapping(value = "/admin-list",method = RequestMethod.GET)
+    public String adminList(){
+        //  model = productService.list(type,model);
+        return "admin-list";
+    }
+
+    @RequestMapping(value = "/add",method = RequestMethod.GET)
+    public String add(){
+        return "admin-des";
+    }
 
     /**
      * 鑾峰彇浜у搧鍒楄〃(鍚庡彴灞曠ず)
@@ -211,7 +221,7 @@ public class ProductController {
      * @param productImgs
      * @return
      */
-    @RequestMapping("/edit")
+    @RequestMapping(value = "/edit",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,?> edit(int id,String en_title, String zh_title, int type, String en_type, String zh_type,
                              String en_label1, String zh_label1, String en_label2, String zh_label2,
@@ -273,7 +283,7 @@ public class ProductController {
      * @param productImgs
      * @return
      */
-    @RequestMapping("/add")
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,?> add(String en_title, String zh_title, int type, String en_type, String zh_type,
                              String en_label1, String zh_label1, String en_label2, String zh_label2,
