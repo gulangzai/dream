@@ -147,15 +147,23 @@ public class ProductController {
     }
 */
 
-
-    @RequestMapping(value = "/admin-list",method = RequestMethod.GET)
+    @RequestMapping(value = "/admin-list",method = RequestMethod.GET) 
     public String adminList(@RequestParam(defaultValue = "1")Integer type,
+            @RequestParam(defaultValue = "1") int currentPage,
+            @RequestParam(defaultValue = "20") int pageSize,Model model,HttpSession session){
+     return "admin-list";
+    }
+    
+   
+    @RequestMapping(value = "/adminData",method = RequestMethod.GET)
+    @ResponseBody
+    public List<RespProduct> adminData(@RequestParam(defaultValue = "1")Integer type,
             @RequestParam(defaultValue = "1") int currentPage,
             @RequestParam(defaultValue = "20") int pageSize,Model model,HttpSession session){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
         Map<String,?> map  = productService.adminList(lang,type,currentPage,pageSize);
         model.addAllAttributes(map);
-        return "admin-list";
+        return (List<RespProduct>) map.get("list"); 
     }
     
     @RequestMapping(value = "/admin-add",method = RequestMethod.GET)
@@ -170,9 +178,10 @@ public class ProductController {
     }
 
   
-    @RequestMapping(value = "/admin-delete",method = RequestMethod.GET)
-    public String adminDelete(){
-        return "admin-des";
+    @RequestMapping(value = "/admin-delete/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public  Map<String,?> adminDelete(@PathVariable int id){ 
+        return  productService.del(id);
     }
 
     /**
