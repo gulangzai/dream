@@ -1,7 +1,10 @@
+<#assign base=request.contextPath />
+<#import "spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
+    <base id="base" href="${base}">
     <title>YOUNGS GROUP</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="pingback" href="http://www.youngs-group.com/wordpress/xmlrpc.php" />
@@ -10,29 +13,29 @@
         img.wp-smiley,
         img.emoji {  display: inline !important;  border: none !important;  box-shadow: none !important;  height: 1em !important;  width: 1em !important;  margin: 0 .07em !important;  vertical-align: -0.1em !important;  background: none !important;  padding: 0 !important;  }
     </style>
-    <link rel="stylesheet" id="thickbox-css" href="css/thickbox.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="contact-form-7-css" href="css/styles.css?ver=4.6" type="text/css" media="all" />
-    <link rel="stylesheet" id="js_composer_front-css" href="css/js_composer.min.css?ver=5.0" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-bootstrap-css" href="css/bootstrap.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-flex-css" href="css/flexslider.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-style-css" href="css/style-1.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-main-css" href="css/style-2.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-icons-css" href="css/font-awesome.min.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-carousel-css" href="css/owl.carousel.min.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-owl-style-css" href="css/owl.theme.default.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tooltipster-css" href="css/tooltipster.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tool-shadow-css" href="css/tooltipster-shadow.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-megafolio-css" href="css/settings.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-fancybox-css" href="css/jquery.fancybox.css?v=2.1.5&amp;ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-fullpage-css" href="css/jquery.fullPage.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tabulous-css" href="css/tabulous.css?ver=4.7.7" type="text/css" media="all" />
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" id="thickbox-css" href="${base}/css/thickbox.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="contact-form-7-css" href="${base}/css/styles.css?ver=4.6" type="text/css" media="all" />
+    <link rel="stylesheet" id="js_composer_front-css" href="${base}/css/js_composer.min.css?ver=5.0" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-bootstrap-css" href="${base}/css/bootstrap.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-flex-css" href="${base}/css/flexslider.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-style-css" href="${base}/css/style-1.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-main-css" href="${base}/css/style-2.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-icons-css" href="${base}/css/font-awesome.min.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-carousel-css" href="${base}/css/owl.carousel.min.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-owl-style-css" href="${base}/css/owl.theme.default.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tooltipster-css" href="${base}/css/tooltipster.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tool-shadow-css" href="${base}/css/tooltipster-shadow.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-megafolio-css" href="${base}/css/settings.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-fancybox-css" href="${base}/css/jquery.fancybox.css?v=2.1.5&amp;ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-fullpage-css" href="${base}/css/jquery.fullPage.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tabulous-css" href="${base}/css/tabulous.css?ver=4.7.7" type="text/css" media="all" />
+    <script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="css/video-js.css" rel="stylesheet">
+    <link href="${base}/css/video-js.css" rel="stylesheet">
     <!-- If you'd like to support IE8 -->
-    <script src="js/videojs-ie8.min.js"></script>
+    <script src="${base}/js/videojs-ie8.min.js"></script>
     <style>
         .m{ width: 100%; height: 100%; margin-left: auto; margin-right: auto;}
         #my-video{ width: 100%; height: 450px;}
@@ -156,7 +159,7 @@
             </div>
             <!--Logo Start-->
             <div class="logo">
-                <a href="" class=""> <img src="images/home-02.png" /></a>
+                <a href="" class=""> <img src="${base}/images/home-02.png" /></a>
             </div>
             <!--Logo End-->
             <!--Navigation Menu Start-->
@@ -177,7 +180,7 @@
 </div>
 <!--Main Menu Wrapper End-->
 <div class="home-logo">
-    <a href=""><img src="images/home-02.png" /></a>
+    <a href=""><img src="${base}/images/home-02.png" /></a>
 </div>
 <!--Fullpage Wrapper Start-->
 <div id="fullpage">
@@ -193,13 +196,13 @@
                                     <div class="wpb_wrapper">
                                         <div id="home-video" class="myVideo" data-image-src="http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg" style="background-image: url(&quot;http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg&quot;);">
                                             <video id="youngsVideo" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
-                                                <source src="images/youngs.mp4" type="video/mp4">
+                                                <source src="${base}/images/youngs.mp4" type="video/mp4">
                                             </video>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mouse-scroll">
-                                    <a id="moveSectionDown" href="#"> <img src="images/mouse-scroll.png" alt="mouse scroll" /> </a>
+                                    <a id="moveSectionDown" href="#"> <img src="${base}/images/mouse-scroll.png" alt="mouse scroll" /> </a>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +217,7 @@
                     <div class="wpb_column vc_column_container vc_col-sm-12">
                         <div class="vc_column-inner ">
                             <div class="wpb_wrapper">
-                                <i class="fa  icn-1"><img src="images/home-04.png" align="center"></i>
+                                <i class="fa  icn-1"><img src="${base}/images/home-04.png" align="center"></i>
                                 <div class="row"></div>
                                 <div class="gap_10"></div>
                                 <blockquote class="blockquote2" style="margin-bottom: 0; padding-bottom: 10px;">
@@ -274,7 +277,7 @@
                                         <div class="block-thumb-wrap ripple">
                                             <a href="">
                                                 <div class="content-block-thumb fit-img">
-                                                    <img src="images/1.jpg" alt="thumbnail" />
+                                                    <img src="${base}/images/1.jpg" alt="thumbnail" />
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#e9e9e9">
@@ -291,7 +294,7 @@
                                         <div class="block-thumb-wrap ripple">
                                             <a href="">
                                                 <div class="content-block-thumb fit-img">
-                                                    <img src="images/2.jpg" alt="thumbnail" />
+                                                    <img src="${base}/images/2.jpg" alt="thumbnail" />
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#ffffff">
@@ -309,7 +312,7 @@
                                         <div class="block-thumb-wrap ripple">
                                             <a href="">
                                                 <div class="content-block-thumb fit-img">
-                                                    <img src="images/3.jpg" alt="thumbnail" />
+                                                    <img src="${base}/images/3.jpg" alt="thumbnail" />
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#e9e9e9">
@@ -412,22 +415,46 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                   <#if p21??>
+                                                                      <a href="${base}/productInfo/${p21.id}">
+                                                                          <img src="${p21.imgUrl}">
+                                                                      </a>
+                                                                       <#else>
+                                                                           <img src="${base}/images/q.jpg">
+                                                                       </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p22??>
+                                                                        <a href="${base}/productInfo/${p22.id}">
+                                                                        <img src="${p22.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p23??>
+                                                                        <a href="${base}/productInfo/${p23.id}">
+                                                                        <img src="${p23.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/r.jpg">
+                                                                    <#if p24??>
+                                                                        <a href="${base}/productInfo/${p24.id}">
+                                                                        <img src="${p24.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/r.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -436,22 +463,46 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                    <#if p25??>
+                                                                        <a href="${base}/productInfo/${p25.id}">
+                                                                        <img src="${p25.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/q.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p26??>
+                                                                        <a href="${base}/productInfo/${p26.id}">
+                                                                        <img src="${p26.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p27??>
+                                                                        <a href="${base}/productInfo/${p27.id}">
+                                                                        <img src="${p27.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/r.jpg">
+                                                                    <#if p28??>
+                                                                        <a href="${base}/productInfo/${p28.id}">
+                                                                        <img src="${p28.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/r.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -460,22 +511,40 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                    <#if p29??>
+                                                                        <a href="${base}/productInfo/${p29.id}">
+                                                                        <img src="${p29.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/q.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p210??>
+                                                                        <a href="${base}/productInfo/${p210.id}">
+                                                                        <img src="${p210.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p211??>
+                                                                        <a href="${base}/productInfo/${p211.id}">
+                                                                        <img src="${p211.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li teshu">
-                                                                    <img src="images/123.png">
+                                                                    <img src="${base}/images/123.png">
                                                                     <div class="tubi">
                                                                         <p style="font-size: 1.5rem!important; color:#fff!important; margin-top: 30%!important; margin-bottom: 0!important;">MORE ABOUT WORK</p>
                                                                     </div>
@@ -489,22 +558,46 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                    <#if p31??>
+                                                                        <a href="${base}/productInfo/${p31.id}">
+                                                                        <img src="${p31.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/q.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p32??>
+                                                                        <a href="${base}/productInfo/${p32.id}">
+                                                                        <img src="${p32.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p33??>
+                                                                        <a href="${base}/productInfo/${p33.id}">
+                                                                        <img src="${p33.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/r.jpg">
+                                                                    <#if p34??>
+                                                                        <a href="${base}/productInfo/${p34.id}">
+                                                                        <img src="${p34.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/r.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -513,22 +606,46 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                    <#if p35??>
+                                                                        <a href="${base}/productInfo/${p35.id}">
+                                                                        <img src="${p35.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/q.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p36??>
+                                                                        <a href="${base}/productInfo/${p36.id}">
+                                                                        <img src="${p36.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p37??>
+                                                                        <a href="${base}/productInfo/${p37.id}">
+                                                                        <img src="${p37.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/r.jpg">
+                                                                    <#if p38??>
+                                                                        <a href="${base}/productInfo/${p38.id}">
+                                                                        <img src="${p38.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/r.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -537,22 +654,40 @@
                                                         <div class="row">
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/q.png">
+                                                                    <#if p39??>
+                                                                        <a href="${base}/productInfo/${p39.id}">
+                                                                        <img src="${p39.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/q.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/w.jpg">
+                                                                    <#if p310??>
+                                                                        <a href="${base}/productInfo/${p310.id}">
+                                                                        <img src="${p310.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/w.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li li-in">
-                                                                    <img src="images/e.jpg">
+                                                                    <#if p311??>
+                                                                        <a href="${base}/productInfo/${p311.id}">
+                                                                        <img src="${p311.imgUrl}">
+                                                                        </a>
+                                                                        <#else>
+                                                                            <img src="${base}/images/e.jpg">
+                                                                            </#if>
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-3" style="padding:0;">
                                                                 <div class="image-li teshu">
-                                                                    <img src="images/123.png">
+                                                                    <img src="${base}/images/123.png">
                                                                     <div class="tubi">
                                                                         <p style="font-size: 1.5rem!important; color:#fff!important; margin-top: 30%!important; margin-bottom: 0!important;">MORE ABOUT WORK</p>
                                                                     </div>
@@ -597,8 +732,8 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-10">
                             <div class="m">
-                                <video id="my-video" class="video-js" controls preload="auto" poster="images/banner.jpg" data-setup="{}" controls>
-                                    <source src="images/oceans.mp4" type="video/mp4">
+                                <video id="my-video" class="video-js" controls preload="auto" poster="${base}/images/banner.jpg" data-setup="{}" controls>
+                                    <source src="${base}/images/oceans.mp4" type="video/mp4">
                                     <p class="vjs-no-js">
                                         To view this video please enable JavaScript, and consider upgrading to a web browser that
                                         <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -615,33 +750,33 @@
                             </div>
                             <div class="video-main clearfix">
                                 <div class="main-left" style="width:25%; float: left;">
-                                    <img src="images/home-08.png" class="img-responsive">
+                                    <img src="${base}/images/home-08.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:25%; float: left;">
-                                    <img src="images/home-09.png" class="img-responsive">
+                                    <img src="${base}/images/home-09.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:25%; float: left;">
-                                    <img src="images/home-10.png" class="img-responsive">
+                                    <img src="${base}/images/home-10.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:25%;float: left;">
-                                    <img src="images/home-11.png" class="img-responsive">
+                                    <img src="${base}/images/home-11.png" class="img-responsive">
                                 </div>
                             </div>
                             <div class="video-main clearfix" style="    margin-left: 34px;">
                                 <div class="main-left" style="width:20%; float: left;">
-                                    <img src="images/home-12.png" class="img-responsive">
+                                    <img src="${base}/images/home-12.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:20%; float: left;">
-                                    <img src="images/home-13.png" class="img-responsive">
+                                    <img src="${base}/images/home-13.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:20%; float: left;">
-                                    <img src="images/home-14.png" class="img-responsive">
+                                    <img src="${base}/images/home-14.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:20%;float: left;">
-                                    <img src="images/home-15.png" class="img-responsive">
+                                    <img src="${base}/images/home-15.png" class="img-responsive">
                                 </div>
                                 <div class="main-left" style="width:20%;float: left;">
-                                    <img src="images/home-16.png" class="img-responsive">
+                                    <img src="${base}/images/home-16.png" class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -687,23 +822,23 @@
     }
     .image-li img{ width:100%; height:100%;}
 </style>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/jquery.easings.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.slimscroll.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.viewport.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.sidebar.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.flexslider.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.themepunch.megafoliopro.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5&amp;ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.fullPage.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/midnight.jquery.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.tooltipster.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/tabulous.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/custom.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/js_composer_front.min.js?ver=5.0"></script>
-<script type="text/javascript" src="js/waypoints.min.js?ver=5.0"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${base}/js/index.js"></script>
+<script type="text/javascript" src="${base}/js/jquery.easings.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.slimscroll.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.viewport.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.sidebar.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/owl.carousel.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.flexslider.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.themepunch.tools.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.themepunch.megafoliopro.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.fancybox.pack.js?v=2.1.5&amp;ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.fullPage.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/midnight.jquery.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.tooltipster.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/tabulous.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/custom.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/js_composer_front.min.js?ver=5.0"></script>
+<script type="text/javascript" src="${base}/js/waypoints.min.js?ver=5.0"></script>
 </body>
 </html>

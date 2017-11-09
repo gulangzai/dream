@@ -25,7 +25,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/fonts/" mapping="/fonts/**" />
-	<mvc:resources location="/img/" mapping="/img/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 
 	<!-- 视图解释类 -->

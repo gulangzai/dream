@@ -1,10 +1,13 @@
+<#assign base=request.contextPath />
+<#import "spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <base id="base" href="${base}">
     <title>后台列表</title>
-    <link rel="stylesheet" id="thickbox-css" href="css/admin.css" type="text/css"/>
-    <link rel="stylesheet" id="olida-bootstrap-css" href="css/bootstrap.css?ver=4.7.7" type="text/css" media="all"/>
+    <link rel="stylesheet" id="thickbox-css" href="${base}/css/admin.css" type="text/css"/>
+    <link rel="stylesheet" id="olida-bootstrap-css" href="${base}/css/bootstrap.css?ver=4.7.7" type="text/css" media="all"/>
 </head>
 <body>
 <div class="des">
@@ -98,7 +101,7 @@
                     </p>
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="" id="">
-                        <img src="images/icon-jia.png">
+                        <img src="${base}/images/icon-jia.png">
                     </a>
                 </div>
                 <div class="photo-right">
@@ -108,7 +111,7 @@
                     </p>
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="" id="">
-                        <img src="images/icon-jia.png">
+                        <img src="${base}/images/icon-jia.png">
                     </a>
                 </div>
             </div>
@@ -123,15 +126,15 @@
             </p>
             <div class="bottom-image clearfix">
                 <div class="image-li">
-                    <img src="images/2.jpg">
+                    <img src="${base}/images/2.jpg">
                     <p>删除</p>
                 </div>
                 <div class="image-li">
-                    <img src="images/2.jpg">
+                    <img src="${base}/images/2.jpg">
                     <p>删除</p>
                 </div>
                 <div class="image-li">
-                    <img src="images/2.jpg">
+                    <img src="${base}/images/2.jpg">
                     <p>删除</p>
                 </div>
             </div>
@@ -162,7 +165,7 @@
         <a class="teshu" href="javascript:;">取消</a>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${base}/js/index.js"></script>
 </body>
 </html>

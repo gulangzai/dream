@@ -189,15 +189,17 @@ public class ProductService {
         List<RespProduct> list2 = new ArrayList<RespProduct>();
         for (Product product : productList2){
             RespProduct respProduct = new RespProduct(lang,product);
-            list2.add(respProduct);
+         //   list2.add(respProduct);
+            model.addAttribute("p2"+respProduct.getNum(),respProduct);
         }
         List<RespProduct> list3 = new ArrayList<RespProduct>();
         for (Product product : productList3){
             RespProduct respProduct = new RespProduct(lang,product);
-            list3.add(respProduct);
+       //     list3.add(respProduct);
+            model.addAttribute("p3"+respProduct.getNum(),respProduct);
         }
-        model.addAttribute("list2",list2);
-        model.addAttribute("list3",list3);
+      //  model.addAttribute("list2",list2);
+       // model.addAttribute("list3",list3);
         return model;
     }
 

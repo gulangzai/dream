@@ -1,7 +1,10 @@
+<#assign base=request.contextPath />
+<#import "spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
+    <base id="base" href="${base}">
     <title>YOUNGS GROUP</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="generator" content="WordPress 4.7.7" />
@@ -22,22 +25,22 @@
             padding: 0 !important;
         }
     </style>
-    <link rel="stylesheet" id="thickbox-css" href="css/thickbox.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="contact-form-7-css" href="css/styles.css?ver=4.6" type="text/css" media="all" />
-    <link rel="stylesheet" id="js_composer_front-css" href="css/js_composer.min.css?ver=5.0" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-bootstrap-css" href="css/bootstrap.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-flex-css" href="css/flexslider.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-style-css" href="css/style-1.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-main-css" href="css/style-2.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-icons-css" href="css/font-awesome.min.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-carousel-css" href="css/owl.carousel.min.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-owl-style-css" href="css/owl.theme.default.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tooltipster-css" href="css/tooltipster.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tool-shadow-css" href="css/tooltipster-shadow.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-megafolio-css" href="css/settings.css?ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-fancybox-css" href="css/jquery.fancybox.css?v=2.1.5&amp;ver=4.7.7" type="text/css" media="all" />
-    <link rel="stylesheet" id="olida-tabulous-css" href="css/tabulous.css?ver=4.7.7" type="text/css" media="all" />
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" id="thickbox-css" href="${base}/css/thickbox.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="contact-form-7-css" href="${base}/css/styles.css?ver=4.6" type="text/css" media="all" />
+    <link rel="stylesheet" id="js_composer_front-css" href="${base}/css/js_composer.min.css?ver=5.0" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-bootstrap-css" href="${base}/css/bootstrap.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-flex-css" href="${base}/css/flexslider.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-style-css" href="${base}/css/style-1.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-main-css" href="${base}/css/style-2.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-icons-css" href="${base}/css/font-awesome.min.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-carousel-css" href="${base}/css/owl.carousel.min.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-owl-style-css" href="${base}/css/owl.theme.default.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tooltipster-css" href="${base}/css/tooltipster.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tool-shadow-css" href="${base}/css/tooltipster-shadow.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-megafolio-css" href="${base}/css/settings.css?ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-fancybox-css" href="${base}/css/jquery.fancybox.css?v=2.1.5&amp;ver=4.7.7" type="text/css" media="all" />
+    <link rel="stylesheet" id="olida-tabulous-css" href="${base}/css/tabulous.css?ver=4.7.7" type="text/css" media="all" />
+    <script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
     <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1482506631967{background-color: #333333 !important;}</style>
     <style>
         #mute{  display: block;  position: absolute;  right:40px;  bottom: 40px;  font-size:24px;  line-height: 44px;  width: 44px;  text-align: center;  color:#fff;  cursor: pointer;  background-color: transparent;  transition: all 0.3s ease-in-out 0s;  border-radius: 2px;  }
@@ -173,12 +176,12 @@
 </div>
 <!--Main Menu Wrapper End-->
 <div class="home-logo">
-    <a href=""><img src="images/home-02.png" /></a>
+    <a href=""><img src="${base}/images/home-02.png" /></a>
 </div>
 <div id="fullpage" class="fullpageDisable"></div>
 <div class="container-wrapper">
     <!--Single Page Header Start-->
-    <div class="page-header" data-bg-color="#212121" data-image-src="images/banner2.jpg">
+    <div class="page-header" data-bg-color="#212121" data-image-src="${base}/images/banner2.jpg">
 
     </div>
     <!--Single Page Header End-->
@@ -218,17 +221,17 @@
                                                         <div class="wpb_single_image wpb_content_element vc_align_left  wpb_animate_when_almost_visible wpb_fadeIn fadeIn">
                                                             <figure class="wpb_wrapper vc_figure">
                                                                 <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                    <img width="100%" height="100%" src="images/d1.jpg" class="vc_single_image-img attachment-full" alt=""  />
+                                                                    <img width="100%" height="100%" src="${base}/images/d1.jpg" class="vc_single_image-img attachment-full" alt=""  />
                                                                 </div>
                                                             </figure>
                                                             <figure class="wpb_wrapper vc_figure">
                                                                 <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                    <img width="100%" height="100%" src="images/d2.jpg" class="vc_single_image-img attachment-full" alt=""  />
+                                                                    <img width="100%" height="100%" src="${base}/images/d2.jpg" class="vc_single_image-img attachment-full" alt=""  />
                                                                 </div>
                                                             </figure>
                                                             <figure class="wpb_wrapper vc_figure">
                                                                 <div class="vc_single_image-wrapper   vc_box_border_grey">
-                                                                    <img width="100%" height="100%" src="images/d3.jpg" class="vc_single_image-img attachment-full" alt=""  />
+                                                                    <img width="100%" height="100%" src="${base}/images/d3.jpg" class="vc_single_image-img attachment-full" alt=""  />
                                                                 </div>
                                                             </figure>
                                                         </div>
@@ -276,22 +279,22 @@
         </div>
     </div>
 </div>
-<link rel="stylesheet" id="animate-css-css" href="css/animate.min.css?ver=5.0" type="text/css" media="" />
-<script type="text/javascript" src="js/jquery.easings.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.slimscroll.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.viewport.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.sidebar.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.flexslider.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.themepunch.megafoliopro.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5&amp;ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.fullPage.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/midnight.jquery.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/jquery.tooltipster.min.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/tabulous.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/custom.js?ver=4.7.7"></script>
-<script type="text/javascript" src="js/js_composer_front.min.js?ver=5.0"></script>
-<script type="text/javascript" src="js/waypoints.min.js?ver=5.0"></script>
+<link rel="stylesheet" id="animate-css-css" href="${base}/css/animate.min.css?ver=5.0" type="text/css" media="" />
+<script type="text/javascript" src="${base}/js/jquery.easings.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.slimscroll.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.viewport.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.sidebar.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/owl.carousel.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.flexslider.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.themepunch.tools.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.themepunch.megafoliopro.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.fancybox.pack.js?v=2.1.5&amp;ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.fullPage.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/midnight.jquery.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/jquery.tooltipster.min.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/tabulous.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/custom.js?ver=4.7.7"></script>
+<script type="text/javascript" src="${base}/js/js_composer_front.min.js?ver=5.0"></script>
+<script type="text/javascript" src="${base}/js/waypoints.min.js?ver=5.0"></script>
 </body>
 </html>

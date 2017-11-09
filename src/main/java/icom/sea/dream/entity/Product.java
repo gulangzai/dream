@@ -27,6 +27,7 @@ public class Product implements Serializable{
     private String en_descript;
     private String zh_descript;
     private String imgUrl;
+    private String picUrl;
     private Integer dimension;
     private Integer isHomePage;
     private Integer num;
@@ -184,5 +185,13 @@ public class Product implements Serializable{
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }

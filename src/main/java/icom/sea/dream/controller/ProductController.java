@@ -74,11 +74,21 @@ public class ProductController {
      * 鑾峰彇棣栭〉鐨勪綔鍝佸垪琛紝2灞忥紝22涓�(鍓嶅彴棣栭〉)
      * @return
      */
-    @RequestMapping("/shouyeProductList2")
+    @RequestMapping("/index")
     public String shouyeProductList(HttpSession session,Model model){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
         model = productService.shouyeProductList(lang,model);
         return "index";
+    }
+
+    @RequestMapping("/abous")
+    public String abous(){
+        return "abous";
+    }
+
+        @RequestMapping("/business")
+    public String business(){
+        return "business";
     }
 
     /**
@@ -105,7 +115,7 @@ public class ProductController {
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
         model = productService.productInfo(lang,id, model);
         model.addAttribute("id",id);
-        return "info";
+        return "detail";
     }
 
 
@@ -202,27 +212,27 @@ public class ProductController {
                              @RequestParam(defaultValue = "0") int num, @RequestParam(value = "productImgs[]") String[] productImgs){
         Map<String,String> map = new HashMap<String, String>();
         if("".equalsIgnoreCase(en_type)){
-            map.put("msg","璇烽�夋嫨浣滃搧鍒嗙被");
+            map.put("msg","请选择作品分类");
             return map;
         }
         if(null == zh_title || "".equalsIgnoreCase(zh_title)){
-            map.put("msg","璇峰～鍐欎綔鍝佷腑鏂囨爣棰�");
+            map.put("msg","请填写作品中文标题");
             return map;
         }
         if(null == en_title || "".equalsIgnoreCase(en_title)){
-            map.put("msg","璇峰～鍐欎綔鍝佸紩鏂囨爣棰�");
+            map.put("msg","请填写作品引文标题");
             return map;
         }
         if(null == zh_descript || "".equalsIgnoreCase(zh_descript)){
-            map.put("msg","璇峰～鍐欎綔鍝佷腑鏂囨弿杩�");
+            map.put("msg","请填写作品中文描述");
             return map;
         }
         if(null == en_descript || "".equalsIgnoreCase(en_descript)){
-            map.put("msg","璇峰～鍐欎綔鍝佸紩鏂囨弿杩�");
+            map.put("msg","请填写作品引文描述");
             return map;
         }
         if(null == imgUrl || "".equalsIgnoreCase(imgUrl)){
-            map.put("msg","璇蜂笂浼犱綔鍝佸皝闈㈠浘鐗�");
+            map.put("msg","请上传作品封面图片");
             return map;
         }
         return productService.edit(id, en_title,  zh_title,  type,  en_type,  zh_type,
@@ -264,27 +274,27 @@ public class ProductController {
                              @RequestParam(defaultValue = "0") int num, @RequestParam(value = "productImgs[]") String[] productImgs){
         Map<String,String> map = new HashMap<String, String>();
         if("".equalsIgnoreCase(en_type)){
-            map.put("msg","璇烽�夋嫨浣滃搧鍒嗙被");
+            map.put("msg","请选择作品分类");
             return map;
         }
         if(null == zh_title || "".equalsIgnoreCase(zh_title)){
-            map.put("msg","璇峰～鍐欎綔鍝佷腑鏂囨爣棰�");
+            map.put("msg","请填写作品中文标题");
             return map;
         }
         if(null == en_title || "".equalsIgnoreCase(en_title)){
-            map.put("msg","璇峰～鍐欎綔鍝佸紩鏂囨爣棰�");
+            map.put("msg","请填写作品引文标题");
             return map;
         }
         if(null == zh_descript || "".equalsIgnoreCase(zh_descript)){
-            map.put("msg","璇峰～鍐欎綔鍝佷腑鏂囨弿杩�");
+            map.put("msg","请填写作品中文描述");
             return map;
         }
         if(null == en_descript || "".equalsIgnoreCase(en_descript)){
-            map.put("msg","璇峰～鍐欎綔鍝佸紩鏂囨弿杩�");
+            map.put("msg","请填写作品引文描述");
             return map;
         }
         if(null == imgUrl || "".equalsIgnoreCase(imgUrl)){
-            map.put("msg","璇蜂笂浼犱綔鍝佸皝闈㈠浘鐗�");
+            map.put("msg","请上传作品封面图片");
             return map;
         }
         return productService.add( en_title,  zh_title,  type,  en_type,  zh_type,
