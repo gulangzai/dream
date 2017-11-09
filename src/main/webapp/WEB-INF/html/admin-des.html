@@ -91,7 +91,7 @@
             <div class="photo clearfix">
                 <div class="photo-left">
                     <p class="tubi-p">
-                        <span class="color">作品封面</span>
+                        <span class="color">作品主图</span>
                         <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
                     </p>
                     <a href="javascript:;" class="a-upload-1">
@@ -169,10 +169,11 @@
 </div>
 <div class="bottom-bottom">
     <div class="bottom-a clearfix">
-        <a href="javascript:;">确定</a>
+        <a href="javascript:add()">添加</a>
     </div>
 </div>
-<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
+<!--<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>-->
+<script src="${base}/js/jquery-1.11.0.min.js"></script>
 <!--<script type="text/javascript" src="${base}/js/index.js"></script>-->
 <script type="text/javascript" src="${base}/js/jquery.ajaxfileupload.js"></script>
 <script type="text/javascript">
@@ -286,9 +287,42 @@
     }
 
     function add() {
-        var productImgs = new Array();
-        productImgs = $("imgs").split("_");
-
+        if(zh_type==""){
+            alert("请选择作品类别")
+            return false;
+        }
+        if(labels.length==0){
+            alert("请选择作品标签")
+            return false;
+        }
+        if($("#zh_title").val()==""){
+            alert("请填写中文标题");
+            return false;
+        }
+        if($("#en_title").val()==""){
+            alert( "请填写英文标题");
+            return false;
+        }
+        if($("#zh_descript").val()==""){
+            alert( "请填写中文描述");
+            return false;
+        }
+        if($("#en_descript").val()==""){
+            alert( "请填写英文描述");
+            return false;
+        }
+        if($("img").val()==""){
+            alert("请选择主图")
+            return false;
+        }
+        if($("pic").val()==""){
+            alert("请选择封面")
+            return false;
+        }
+        if($("imgs").val()==""){
+            alert("请选择作品图")
+            return false;
+        }
         var en_type,type;
         if(zh_type=="城市形象"){
             en_type = "City Image";
@@ -306,6 +340,8 @@
             en_type = "Brand space vision";
             type = 5;
         }
+        var productImgs = new Array();
+        productImgs = $("imgs").val().split("_");
         var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
         $.each(labels,function(index,label){
             if(index==0){
