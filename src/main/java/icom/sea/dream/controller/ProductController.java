@@ -88,7 +88,7 @@ public class ProductController {
         return "abous";
     }
 
-        @RequestMapping("/business")
+    @RequestMapping("/business")
     public String business(){
         return "business";
     }
