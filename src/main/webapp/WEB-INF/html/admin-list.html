@@ -36,7 +36,7 @@
                     <a href="javascript:;">品牌空间视觉</a>
                 </li>
             </ul>
-            <a class="right-right" href="${base}/add">添加作品</a>
+            <a class="right-right" href="${base}/admin-add">添加作品</a>
         </div>
         <div class="list-middle">
             <div class="bs-example" data-example-id="bordered-table">
@@ -52,14 +52,23 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="top-tr">
-                        <th scope="row">1</th>
-                        <td><img src="${base}/images/3.jpg" style="width:85px; height:65px;"></td>
-                        <td>作品标题作品标题作品标题作品标题</td>
-                        <td>城市形象</td>
-                        <td>否</td>
+                    
+                    <#list list as product>  
+					    <tr class="top-tr">
+                        <th scope="row">${product_index+1} </th>
+                        <td><img src="${product.imgUrl}" style="width:85px; height:65px;"></td>
+                        <td>${product.title}</td>
+                        <td>${product.type}</td>
+                         <#if product.isHomePage==1>
+                            <td>是</td> 
+                         <#else>
+                            <td>否</td>
+                         </#if>
                         <td><a href="javascript:;">查看</a><a href="javascript:;">编辑</a><a href="javascript:;">删除</a></td>
-                    </tr>
+                         </tr> 
+					</#list>  
+
+                  
                     <tr class="top-tr">
                         <th scope="row">1</th>
                         <td><img src="${base}/images/3.jpg" style="width:85px; height:65px;"></td>

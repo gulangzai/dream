@@ -149,16 +149,31 @@ public class ProductController {
 
 
     @RequestMapping(value = "/admin-list",method = RequestMethod.GET)
-    public String adminList(){
-        //  model = productService.list(type,model);
+    public String adminList(@RequestParam(defaultValue = "1")Integer type,
+            @RequestParam(defaultValue = "1") int currentPage,
+            @RequestParam(defaultValue = "20") int pageSize,Model model,HttpSession session){
+        String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
+        Map<String,?> map  = productService.adminList(lang,type,currentPage,pageSize);
+        model.addAllAttributes(map);
         return "admin-list";
     }
+    
+    @RequestMapping(value = "/admin-add",method = RequestMethod.GET)
+    public String adminAdd(){
+        return "admin-des";
+    }
+    
 
-    @RequestMapping(value = "/add",method = RequestMethod.GET)
-    public String add(){
+    @RequestMapping(value = "/admin-edit",method = RequestMethod.GET)
+    public String adminEdit(){
         return "admin-des";
     }
 
+  
+    @RequestMapping(value = "/admin-delete",method = RequestMethod.GET)
+    public String adminDelete(){
+        return "admin-des";
+    }
 
     /**
      * 鑾峰彇浜у搧鍒楄〃(鍚庡彴灞曠ず)

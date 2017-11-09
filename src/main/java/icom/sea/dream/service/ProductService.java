@@ -94,11 +94,30 @@ public class ProductService {
         map.put("totalPage", total%pageSize==0?total/pageSize:total/pageSize+1);
         return map;
     }
+    
+    public Map<String,?> adminList(String lang,Integer type, int currentPage, int pageSize) {
+        Map<String,Object> map = new HashedMap();
+        List<Product> list = productDao.findSplit("from Product where type=?",currentPage,pageSize,type);
+        List<RespProduct> respProductList = new ArrayList();
+        Long t = productDao.total("select count(id) from Product where type=?",type);
+        int total = (null == t)?0:Integer.parseInt(""+t);
+        for(Product product : list){
+            RespProduct respProduct = new RespProduct(lang,product);
+            respProductList.add(respProduct);
+        }
+        map.put("list",respProductList);
+        map.put("currentPage",currentPage);
+        map.put("pageSize",pageSize);
+        map.put("totalPage", total%pageSize==0?total/pageSize:total/pageSize+1);
+        return map;
+    }
+    
 
     public Model list(Integer type, int currentPage, int pageSize, Model model) {
         List<Product> list = productDao.findSplit("from Product where type=?",currentPage,pageSize,type);
         Long t = productDao.total("select count(id) from Product where type=?",type);
         int total = (null == t)?0:Integer.parseInt(""+t);
+        
         model.addAttribute("list",list);
         model.addAttribute("currentPage",currentPage);
         model.addAttribute("pageSize",pageSize);
