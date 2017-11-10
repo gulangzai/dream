@@ -385,6 +385,7 @@
             }
         });
         var zh_type = "";
+    
         $.each( $(".des-main .main-list .list-top p.one span"),function(index,n){
             if($(this).hasClass("active")){
                 zh_type=$(this).text();
@@ -436,20 +437,25 @@
         if(zh_type=="城市形象"){
             en_type = "City Image";
             type = 1;
-        }else if(zh_type=="品牌策划"){
+        }else if(zh_type=="品牌全案"){
             en_type = "Brand planning";
             type = 2;
-        }else if(zh_type=="品牌平面视觉"){
+        }else if(zh_type=="品牌平面设计"){
             en_type = "Brand Graphic vision";
             type = 3;
-        }else if(zh_type=="品牌互联网视觉"){
+        }else if(zh_type=="品牌互联网设计"){
             en_type = "Brand internet vision";
             type = 4;
-        }else if(zh_type=="品牌空间视觉"){
+        }else if(zh_type=="品牌空间设计"){
             en_type = "Brand space vision";
             type = 5;
+        }else if(zh_type=="制作和施工"){
+        	en_type = "construction";
+            type = 6;
         }
+ 
 
+        
         console.info($("#imgs").val());
       
         var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
@@ -617,22 +623,27 @@
             return false;
         }
         var en_type,type;
+
         if(zh_type=="城市形象"){
             en_type = "City Image";
             type = 1;
-        }else if(zh_type=="品牌策划"){
+        }else if(zh_type=="品牌全案"){
             en_type = "Brand planning";
             type = 2;
-        }else if(zh_type=="品牌平面视觉"){
+        }else if(zh_type=="品牌平面设计"){
             en_type = "Brand Graphic vision";
             type = 3;
-        }else if(zh_type=="品牌互联网视觉"){
+        }else if(zh_type=="品牌互联网设计"){
             en_type = "Brand internet vision";
             type = 4;
-        }else if(zh_type=="品牌空间视觉"){
+        }else if(zh_type=="品牌空间设计"){
             en_type = "Brand space vision";
             type = 5;
-        }  
+        }else if(zh_type=="制作和施工"){
+        	en_type = "construction";
+            type = 6;
+        }
+        
         console.info($("#imgs").val());
         var productImgs = new Array();
         $("#uploadFiles>.image-li>img").each(function(ele){
@@ -672,7 +683,7 @@
                 en_descript : $("#en_descript").val(),      //英文表述
                 zh_descript : $("#zh_descript").val(),      //中文描述
                 imgUrl : $("#fileImage1").attr("src"),           //封面图片地址
-                picImg : $("#fileImage1").attr("src"),
+                picImg : $("#fileImage2").attr("src"),
                 dimension : $("#dimension").val(),         //2维作品或者3维作品，值为2或3
                 isHomePage : $("#isHomePage")[0].checked?1:0,        //是否显示在首页1是，0否
                 num : $("#num").val(),                //如果显示在首页填1-11数字，代表首页的位置，否则填0
