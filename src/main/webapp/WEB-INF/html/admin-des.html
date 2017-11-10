@@ -18,6 +18,7 @@
 </div>
 <div class="des-main">
     <div class="main-list">
+    <input type="hidden" value="${id}" id="id"></input>
         <p class="title">作品列表>添加作品</p>
         <div class="list-top clearfix">
             <p class="one clearfix">
@@ -260,15 +261,15 @@
     init();
 
     //如果是编辑页存在初始化
+    var id = 0;
     function init(){
-         var id = '${id}';
+         id  = '${id}';
          if(id!=''){
         	 var zh_title = "${product.zh_title}";
         	 var dimension = "${product.dimension}";
              var num =  "${product.num}"; 
-             alert(num);
-             $("#num").find("option[text='"+num+"']").attr("selected",true);
-             alert(zh_title);
+             alert("id"+id);
+             $("#num").find("option[text='"+num+"']").attr("selected",true); 
          }
         
     }
@@ -280,7 +281,7 @@
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'file1', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
+                dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数 
                 { 
                     var data = eval("("+data+")"); 
@@ -506,7 +507,8 @@
 
 
     function edit() {
-
+    	 id  = '${id}';
+    	 alert("edit"+id);
     	 var productImgs = new Array();
          $("#uploadFiles>.image-li>img").each(function(ele){
          	productImgs.push($(this).attr("src"));
@@ -589,6 +591,7 @@
             url : "${base}/edit",
             dataType : "json",
             data : {
+                id:id,
                 en_title : $("#en_title").val(),     //英文标题
                 zh_title : $("#zh_title").val(),     //中文标题
                 type : type,           //分类，一次定义为1,2,3,4,5
