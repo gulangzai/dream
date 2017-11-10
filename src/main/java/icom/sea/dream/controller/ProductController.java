@@ -186,9 +186,9 @@ public class ProductController {
 
   
     @RequestMapping(value = "/admin-delete/{id}",method = RequestMethod.GET)
-    @ResponseBody
-    public  Map<String,?> adminDelete(@PathVariable int id){ 
-        return  productService.del(id);
+    public  String adminDelete(@PathVariable int id){
+        productService.del(id);
+        return  "redirect:/index";
     }
 
     /**
@@ -211,12 +211,12 @@ public class ProductController {
      * @param id
      * @return
      */
-    @RequestMapping("/del/{id}")
+   /* @RequestMapping("/del/{id}")
     @ResponseBody
     public Map<String,?> del(@PathVariable int id){
         return productService.del(id);
         //  return "redirect:/list?type="+type;
-    }
+    }*/
     /**
      * 鑾峰彇浜у搧淇℃伅(鍚庡彴)
      * @param id

@@ -52,8 +52,8 @@ public class ProductService {
        return list2;
     }
 
-    public Map<String,String> del(int id) {
-        Map<String,String> map = new HashMap<String, String>();
+    public String del(int id) {
+
         Product product = productDao.get(Product.class,id);
         if(null != product){
             List<ProductImg> productImgs = productDao.find("from ProductImg where productId=?",id);
@@ -62,8 +62,7 @@ public class ProductService {
             }
             productDao.delete(product);
         }
-        map.put("msg","删除成功!");
-        return map;
+        return "list";
     }
 
     public Model productInfo(int id, Model model) {
