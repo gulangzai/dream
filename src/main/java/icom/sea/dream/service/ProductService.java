@@ -165,6 +165,8 @@ public class ProductService {
         product.setZh_descript(zh_descript);
         product.setImgUrl(imgUrl);
         product.setIsHomePage(isHomePage);
+        if(isHomePage==0)
+            num=0;
         product.setNum(num);
         int time = (int)(System.currentTimeMillis()/1000);
         product.setTime(time);
@@ -260,6 +262,8 @@ public class ProductService {
             product.setZh_descript(zh_descript);
             product.setImgUrl(imgUrl);
             product.setIsHomePage(isHomePage);
+            if(isHomePage==0)
+                num=0;
             product.setNum(num);
             if(num>0){
                 productDao.update("update Product set num=0 where dimension=?",dimension);
