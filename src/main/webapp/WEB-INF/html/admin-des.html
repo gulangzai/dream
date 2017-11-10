@@ -149,7 +149,7 @@
                  <#list productImgs as productImg> 
 					 <div class="image-li">
 	                    <img src="${productImg.imgUrl}">
-	                    <p>删除</p>
+	                    <p><a onclick='deleteImg(this)'>删除</a></p>
 	                </div>
 					</#list>
                <!--  <div class="image-li">
@@ -276,6 +276,13 @@
         });
     });
 
+   /**
+    * 删除图片
+    **/
+    function deleteImg(x){   
+        $(x).parent().parent().remove();
+    }
+     
   //  init();
 
     //如果是编辑页存在初始化
@@ -291,6 +298,7 @@
          }
         
     }
+
     
     function imgUpload() {
         $.ajaxFileUpload
@@ -354,7 +362,7 @@
                 	console.log(data); 
                     var data = eval("("+data+")");  
                     $("#imgs").val($("#imgs").val()+"_"+data.img);
-                    $("#uploadFiles").append("<div class='image-li'><img src='"+data.img+"'><p>删除</p></div>"); 
+                    $("#uploadFiles").append("<div class='image-li'><img src='"+data.img+"'><p><a onclick='deleteImg(this)'>删除</a></p></div>"); 
                     console.log(data)
                     alert("图片上传成功")
                 },
@@ -650,8 +658,8 @@
             }
         });
     }
-    
 
+ 
 </script>
 </body>
 </html>
