@@ -237,8 +237,8 @@
               $(this).addClass("active")
           }
        });
-    }
-   ;
+    };
+    
     $(function () {
  
         $(".li-in").hover(function(){
@@ -389,9 +389,8 @@
             if($(this).hasClass("active")){
                 zh_type=$(this).text();
             }
-        });
-        alert(zh_type)
-    alert(labels)
+        }); 
+        
    	  var productImgs = new Array();
       $("#uploadFiles>.image-li>img").each(function(ele){
       	productImgs.push($(this).attr("src"));
@@ -575,9 +574,7 @@
             if($(this).hasClass("active")){
                 zh_type=$(this).text();
             }
-        });
-        alert(labels)
-        alert(zh_type)
+        }); 
     	 var productImgs = new Array();
          $("#uploadFiles>.image-li>img").each(function(ele){
          	productImgs.push($(this).attr("src"));
@@ -695,5 +692,5 @@
 
  
 </script>
-</body>
+</body> 
 </html>
