@@ -228,8 +228,7 @@
                 dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 { 
-                    var data = eval("("+data+")");
-                    console.log(data);
+                    var data = eval("("+data+")"); 
                     $("#fileImage1").attr("src",data.img);
                     alert("图片上传成功");
                 },
