@@ -144,7 +144,7 @@ public class ProductService {
 
     public Map<String,?> add(String en_title, String zh_title, int type, String en_type, String zh_type,
                              String en_label1, String zh_label1, String en_label2, String zh_label2, String en_label3,
-                             String zh_label3, String en_descript, String zh_descript, String imgUrl, int dimension,
+                             String zh_label3, String en_descript, String zh_descript, String imgUrl,String picUrl, int dimension,
                              int isHomePage, int num, String[] productImgs) {
         Map<String,String> map = new HashedMap();
         Product product = new Product();
@@ -163,6 +163,7 @@ public class ProductService {
         product.setEn_descript(en_descript);
         product.setZh_descript(zh_descript);
         product.setImgUrl(imgUrl);
+        product.setPicUrl(picUrl);
         product.setIsHomePage(isHomePage);
         if(isHomePage==0)
             num=0;
@@ -242,7 +243,10 @@ public class ProductService {
     }
 
 
-    public Map<String,?> edit(int id, String en_title, String zh_title, int type, String en_type, String zh_type, String en_label1, String zh_label1, String en_label2, String zh_label2, String en_label3, String zh_label3, String en_descript, String zh_descript, String imgUrl, int dimension, int isHomePage, int num, String[] productImgs) {
+    public Map<String,?> edit(int id, String en_title, String zh_title, int type, String en_type,
+                              String zh_type, String en_label1, String zh_label1, String en_label2, String zh_label2,
+                              String en_label3, String zh_label3, String en_descript, String zh_descript, String imgUrl,String picUrl,
+                              int dimension, int isHomePage, int num, String[] productImgs) {
         Product product =productDao.get(Product.class,id);
         if(null != product){
             product.setEn_title(en_title);
@@ -260,6 +264,7 @@ public class ProductService {
             product.setEn_descript(en_descript);
             product.setZh_descript(zh_descript);
             product.setImgUrl(imgUrl);
+            product.setPicUrl(picUrl);
             product.setIsHomePage(isHomePage);
             if(isHomePage==0)
                 num=0;

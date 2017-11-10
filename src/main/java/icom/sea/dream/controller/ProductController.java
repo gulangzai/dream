@@ -259,6 +259,7 @@ public class ProductController {
                              String en_label1, String zh_label1, String en_label2, String zh_label2,
                              String en_label3, String zh_label3, String en_descript, String zh_descript,
                              String imgUrl, @RequestParam(defaultValue = "2") int dimension,
+                             String picUrl,
                              @RequestParam(defaultValue = "1") int isHomePage,
                              @RequestParam(defaultValue = "0") int num, @RequestParam(value = "productImgs[]") String[] productImgs){
         Map<String,String> map = new HashMap<String, String>();
@@ -289,7 +290,7 @@ public class ProductController {
         return productService.edit(id, en_title,  zh_title,  type,  en_type,  zh_type,
                 en_label1,  zh_label1,  en_label2,  zh_label2,
                 en_label3,  zh_label3, en_descript,  zh_descript,
-                imgUrl,  dimension, isHomePage,
+                imgUrl,picUrl,  dimension, isHomePage,
                 num,  productImgs);
     }
 
@@ -321,7 +322,7 @@ public class ProductController {
                              String en_label1, String zh_label1, String en_label2, String zh_label2,
                              String en_label3, String zh_label3, String en_descript, String zh_descript,
                              String imgUrl, @RequestParam(defaultValue = "2") int dimension,
-                             @RequestParam(defaultValue = "1") int isHomePage,
+                             @RequestParam(defaultValue = "1") int isHomePage, String picUrl,
                              @RequestParam(defaultValue = "0") int num, @RequestParam(value = "productImgs[]") String[] productImgs){
         Map<String,String> map = new HashMap<String, String>();
         if("".equalsIgnoreCase(en_type)){
@@ -351,7 +352,7 @@ public class ProductController {
         return productService.add( en_title,  zh_title,  type,  en_type,  zh_type,
                  en_label1,  zh_label1,  en_label2,  zh_label2,
                  en_label3,  zh_label3, en_descript,  zh_descript,
-                 imgUrl,  dimension, isHomePage,
+                 imgUrl,picUrl,  dimension, isHomePage,
          num,  productImgs);
     }
 
