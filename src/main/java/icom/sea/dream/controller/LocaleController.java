@@ -23,7 +23,7 @@ public class LocaleController {
     private LocaleResolver localeResolver;
 
     @RequestMapping(value="/change", method = {RequestMethod.GET})
-    public String change(HttpServletRequest request, Model model, @RequestParam(value="lang", defaultValue="zh") String lang){
+    public String change(HttpServletRequest request, Model model, @RequestParam(value="lang", defaultValue="zh") String lang, @RequestParam(defaultValue = "index") String view){
             if(lang.equals("zh")){
                 Locale locale = new Locale("zh", "CN");
                 request.getSession().setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,locale);
@@ -39,7 +39,7 @@ public class LocaleController {
             //从后台代码获取国际化信息
             RequestContext requestContext = new RequestContext(request);
 
-        return "t";
+        return view;
     }
 
 }  
