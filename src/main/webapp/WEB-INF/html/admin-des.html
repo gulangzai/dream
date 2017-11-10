@@ -78,22 +78,22 @@
             <p class="furo clearfix">
                 <span class="color">作品标题</span>
                 <span class="input-1">
-                    <input type="text" name="zh_title" id="zh_title" value="中文">
+                    <input type="text" name="zh_title" id="zh_title" value="${product.zh_title}">
                     <span>中文</span>
                 </span>
                 <span class="input-2">
-                    <input type="text" name="en_title" id="en_title" value="english">
+                    <input type="text" name="en_title" id="en_title" value="${product.en_title}">
                     <span>英文</span>
                 </span>
             </p>
             <p class="furo clearfix">
                 <span  class="color">作品描述</span>
                 <span class="input-1">
-                    <textarea rows="8" name="zh_descript" id="zh_descript">中文测试</textarea>
+                    <textarea rows="8" name="zh_descript" id="zh_descript">${product.zh_descript}</textarea>
                     <span>中文</span>
                 </span>
                 <span class="input-2">
-                    <textarea rows="8" name="en_descript" id="en_descript">english</textarea>
+                    <textarea rows="8" name="en_descript" id="en_descript">${product.en_descript}</textarea>
                     <span>英文</span>
                 </span>
             </p>
@@ -105,8 +105,8 @@
                     </p>
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file1" onchange="imgUpload()">
-                        <input type="hidden" id="img" value="">
-                        <img src="${base}/images/icon-jia.png" id="fileImage1">
+                        <input type="hidden" id="img" value=""> 
+                        <img src="${product.imgUrl}" id="fileImage1">
                     </a>
                 </div>
                 <div class="photo-right">
@@ -117,7 +117,7 @@
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file2" onchange="picUpload()">
                         <input type="hidden" id="pic" value="">
-                        <img src="${base}/images/icon-jia.png" id="fileImage2">
+                        <img src="${product.picUrl}" id="fileImage2">
                     </a>
                 </div>
             </div>
@@ -132,6 +132,13 @@
                 </a>
             </p>
             <div class="bottom-image clearfix" id="uploadFiles">
+            
+                 <#list productImgs as productImg> 
+					 <div class="image-li">
+	                    <img src="${productImg.imgUrl}">
+	                    <p>删除</p>
+	                </div>
+					</#list>
                <!--  <div class="image-li">
                     <img src="${base}/images/2.jpg">
                     <p>删除</p>
@@ -452,6 +459,117 @@
         }
 
     }
+
+     
+
+
+    function edit() {
+        if(zh_type==""){
+            alert("请选择作品类别")
+            return false;
+        }
+        if(labels.length==0){
+            alert("请选择作品标签")
+            return false;
+        }
+        if($("#zh_title").val()==""){
+            alert("请填写中文标题");
+            return false;
+        }
+        if($("#en_title").val()==""){
+            alert( "请填写英文标题");
+            return false;
+        }
+        if($("#zh_descript").val()==""){
+            alert( "请填写中文描述");
+            return false;
+        }
+        if($("#en_descript").val()==""){
+            alert( "请填写英文描述");
+            return false;
+        }
+        if($("#fileImage1").attr("src")==""){
+            alert("请选择主图")
+            return false;
+        }
+        if($("#fileImage1").attr("src")==""){
+            alert("请选择封面")
+            return false;
+        }
+        if($("#imgs").val()==""){
+            alert("请选择作品图")
+            return false;
+        }
+        var en_type,type;
+        if(zh_type=="城市形象"){
+            en_type = "City Image";
+            type = 1;
+        }else if(zh_type=="品牌策划"){
+            en_type = "Brand planning";
+            type = 2;
+        }else if(zh_type=="品牌平面视觉"){
+            en_type = "Brand Graphic vision";
+            type = 3;
+        }else if(zh_type=="品牌互联网视觉"){
+            en_type = "Brand internet vision";
+            type = 4;
+        }else if(zh_type=="品牌空间视觉"){
+            en_type = "Brand space vision";
+            type = 5;
+        }  
+        console.info($("#imgs").val());
+        var productImgs = new Array();
+        $("#uploadFiles>.image-li>img").each(function(ele){
+        	productImgs.push($(this).attr("src"));
+        }); 
+        var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
+        
+        $.each(labels,function(index,label){
+            if(index==0){
+                zh_label1 = label;
+               en_label1 = zhToEnLlabel(label);
+            }else if(index==1){
+                zh_label2 = label;
+                en_label2 = zhToEnLlabel(label);
+            }else if(index=3){
+                zh_label3 = label
+                en_label3 = zhToEnLlabel(label);
+            }
+        });
+        $.ajax({
+            type : "POST",
+            url : "${base}/edit",
+            dataType : "json",
+            data : {
+                en_title : $("#en_title").val(),     //英文标题
+                zh_title : $("#zh_title").val(),     //中文标题
+                type : type,           //分类，一次定义为1,2,3,4,5
+                en_type : en_type,       //分类中文名称
+                zh_type : zh_type,       //分类英文名称
+                en_label1 : en_label1,     //英文标签1
+                zh_label1 : zh_label1,      //中文标签1
+                en_label2 : en_label2,
+                zh_label2 : zh_label2,
+                en_label3 : en_label3,
+                zh_label3 : zh_label3,
+                en_descript : $("#en_descript").val(),      //英文表述
+                zh_descript : $("#zh_descript").val(),      //中文描述
+                imgUrl : $("#fileImage1").attr("src"),           //封面图片地址
+                picImg : $("#fileImage1").attr("src"),
+                dimension : $("#dimension").val(),         //2维作品或者3维作品，值为2或3
+                isHomePage : $("#isHomePage")[0].checked?1:0,        //是否显示在首页1是，0否
+                num : $("#num").val(),                //如果显示在首页填1-11数字，代表首页的位置，否则填0
+                productImgs : productImgs
+            },
+            success : function(data) {
+                console.log(data)
+                $("#result").empty();
+                //   $("#result").html(data)
+                $("#result").text(JSON.stringify(data))
+            }
+        });
+    }
+    
 
 </script>
 </body>

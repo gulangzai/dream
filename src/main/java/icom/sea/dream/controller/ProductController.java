@@ -174,10 +174,10 @@ public class ProductController {
     }
     
 
-    @RequestMapping(value = "/admin-edit/${id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/admin-edit/{id}",method = RequestMethod.GET)
     public String adminEdit(@PathVariable int id,HttpSession session,Model model){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
-        model = productService.productInfo(lang,id, model);
+        model = productService.getProductInfo(id, model);
         model.addAttribute("id",id);
         return "admin-des";
     }

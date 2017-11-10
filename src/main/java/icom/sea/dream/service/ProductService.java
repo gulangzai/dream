@@ -82,6 +82,14 @@ public class ProductService {
         model.addAttribute("productImgs",productImgs);
         return model;
     }
+    
+    public Model getProductInfo(int id, Model model) {
+        Product product = productDao.get(Product.class,id); 
+        model.addAttribute("product",product);
+        List<ProductImg> productImgs = productDao.find("from ProductImg where productId=?",id);
+        model.addAttribute("productImgs",productImgs);
+        return model;
+    }
 
     public Map<String,?> list(Integer type, int currentPage, int pageSize) {
         Map<String,Object> map = new HashedMap();
