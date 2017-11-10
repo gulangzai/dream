@@ -145,7 +145,7 @@
             </div>
         </a>
     </div>
-    <span style="    position: fixed;top: 28px;left: 88px;z-index: 9999;color: #fff;font-size: 1.8rem;font-weight: 300; letter-spacing: 4px;">EN/CN</span>
+    <span style="    position: fixed;top: 28px;left: 88px;z-index: 9999;color: #fff;font-size: 1.8rem;font-weight: 300; letter-spacing: 4px;"><a style="text-decoration: none;color: #fff;font-size: 1.8rem;" href="${base}/change?lang=en">EN</a>/<a style="text-decoration: none;color: #fff;font-size: 1.8rem;" href="${base}/change?lang=zh">CN</a></span>
     <!--Sidebar Navigation Start-->
     <div class="sidebar-nav">
         <div class="nav-inner-wrap">
@@ -221,14 +221,15 @@
                                 <div class="row"></div>
                                 <div class="gap_10"></div>
                                 <blockquote class="blockquote2" style="margin-bottom: 0; padding-bottom: 10px;">
-                                    <span data-color="#fff" STYLE=" letter-spacing: 2px; font-size: 3rem; ">YOU AND ME CREATE INFINITE POSSIBILITIES</span>
+                                    <span data-color="#fff" STYLE=" letter-spacing: 2px; font-size: 3rem; "><!--YOU AND ME CREATE INFINITE POSSIBILITIES--><@spring.message "shouye_aboutus1"/></span>
                                 </blockquote>
                                 <div class="wpb_text_column wpb_content_element ">
                                     <div class="wpb_wrapper">
                                         <p></p>
                                         <div class="about-us-description" data-color="#a7a7a7">
-                                            We live and exist to create things and experiences people love.
-                                            <br /> We craft things outperform expectations.
+                                          <!--  We live and exist to create things and experiences people love.
+                                            <br /> We craft things outperform expectations.-->
+                                            <@spring.message "shouye_aboutus2"/>
                                         </div>
                                         <p></p>
                                     </div>
@@ -236,7 +237,7 @@
                                 <div class="row"></div>
                                 <div class="gap_60"></div>
                                 <div class="button raised ripple   medium orange">
-                                    <a href="${base}/abous">More About Youngs</a>
+                                    <a href="${base}/abous"><@spring.message "shouye_aboutus3"/></a>
                                 </div>
                             </div>
                         </div>
@@ -260,7 +261,7 @@
                                             </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#ffffff">
-                                            <h3 data-color="#333333" style="font-size:2.2rem;">WE DO</h3>
+                                            <h3 data-color="#333333" style="font-size:2.2rem;"><!--WE DO--><@spring.message "shouye_wedo1"/></h3>
                                             <p class="deta-p clearfix">
                                                 <span></span>
                                                 <span></span>
@@ -270,7 +271,7 @@
                                                 .deta-p{}
                                                 .deta-p span{ float: left; width:6px; height:6px; border-radius: 50%; background:#333333; margin-right: 10px;}
                                             </style>
-                                            <a class="read-more" style="position: absolute;bottom: 9%;color:#969696;" href="${base}/business">MORE 》</a>
+                                            <a class="read-more" style="position: absolute;bottom: 9%;color:#969696;" href="${base}/business"><!--MORE--><@spring.message "more"/> 》</a>
                                         </div>
                                     </div>
                                     <div class="carousel-item dark" data-color="#ffffff" data-bg-color="#313131">
@@ -281,13 +282,13 @@
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#e9e9e9">
-                                            <h3 data-color="#333333">city image</h3>
+                                            <h3 data-color="#333333"><!--city image--><@spring.message "shouye_wedo2"/></h3>
                                             <div class="item-list-description" data-color="#666666" style="line-height: 30px;" >
-                                                Landscape / Public Art<br>
-                                                Building / hostel<br>
-                                                Research on Characteristic Towns<br>
+                                               <!-- Landscape / Public Art--><@spring.message "shouye_wedo3"/><br>
+                                               <!-- Building / hostel--><@sprong.message "shouye_wedo4"/><br>
+                                                <!--Research on Characteristic Towns--><@spring.message "shouye_wedo5"/><br>
                                             </div>
-                                            <a class="read-more" style="position: absolute;bottom:9%;color:#969696;" href="${base}/business">MORE 》</a>
+                                            <a class="read-more" style="position: absolute;bottom:9%;color:#969696;" href="${base}/business"><!--MORE--><@spring.message "more"/> 》</a>
                                         </div>
                                     </div>
                                     <div class="carousel-item " data-color="#474747" data-bg-color="#ffffff">
@@ -298,14 +299,14 @@
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#ffffff">
-                                            <h3 data-color="#333333">Brand master plan</h3>
+                                            <h3 data-color="#333333"><!--Brand master plan--><@spring.message "shouye_wedo6"/></h3>
                                             <div class="item-list-description" data-color="#666666"  style="line-height: 30px;">
-                                                Brand planning<br>
-                                                Brand graphic design<br>
-                                                Brand internet design<br>
-                                                Brand space design<br>
+                                               <!-- Brand planning--><@spring.message "shouye_wedo7"/><br>
+                                                <!--Brand graphic design--><@spring.message "shouye_wedo8"/><br>
+                                                <!--Brand internet design--><@spring.message "shouye_wedo9"/><br>
+                                                <!--Brand space design--><@spring.message "shouye_wedo10"/><br>
                                             </div>
-                                            <a class="read-more"  style="position: absolute;bottom: 9%;color:#969696;" href="${base}/business">MORE 》</a>
+                                            <a class="read-more"  style="position: absolute;bottom: 9%;color:#969696;" href="${base}/business"><!--MORE--><@spring.message "more"/> 》</a>
                                         </div>
                                     </div>
                                     <div class="carousel-item dark" data-color="#ffffff" data-bg-color="#313131">
@@ -316,14 +317,14 @@
                                                 </div> </a>
                                         </div>
                                         <div class="content-block-detail" data-bg-color="#e9e9e9">
-                                            <h3 data-color="#333333">construction</h3>
+                                            <h3 data-color="#333333"><!--construction--><@spring.message "shouye_wedo11"/></h3>
                                             <div class="item-list-description" data-color="#666666"  style="line-height: 30px;">
-                                                Graphic design proofing and production<br>
-                                                Picture album, packing and printing<br>
-                                                Website.APP.H5 development<br>
-                                                Store decoration package<br>
+                                                <!--Graphic design proofing and production--><@spring.message "shouye_wedo12"/><br>
+                                                <!--Picture album, packing and printing--><@spring.message "shouye_wedo13"/><br>
+                                               <!-- Website.APP.H5 development--><@spring.message "shouye_wedo14"/><br>
+                                               <!-- Store decoration package--><@spring.message "shouye_wedo15"/><br>
                                             </div>
-                                            <a class="read-more" style="position: absolute;bottom: 9%; color:#969696;" href="${base}/business">MORE 》</a>
+                                            <a class="read-more" style="position: absolute;bottom: 9%; color:#969696;" href="${base}/business"><!--MORE--><@spring.message "more"/> 》</a>
                                         </div>
                                     </div>
                                 </div>
@@ -378,7 +379,7 @@
                                             <p></p>
                                             <div class="block-title">
                                                 <p></p>
-                                                <h1 style="color:#fff!important;">OUR WORK</h1>
+                                                <h1 style="color:#fff!important;"><!--OUR WORK--><@spring.message "worklist3"/></h1>
                                                 <p> </p>
                                             </div>
                                             <p> </p>
@@ -797,12 +798,12 @@
                 <div data-height="80"></div>
                 <!--Footer Description-->
                 <div class="footer-description animate-fadeIn" style="letter-spacing: 4px; color:#333333;font-weight: 800;">
-                    THIS IS FUTURE DESIGN
+                  <!--  THIS IS FUTURE DESIGN--><@spring.message "shouye_contcat1"/>
                 </div>
                 <div data-height="10"></div>
                 <div class="footer-subdescription animate-fadeIn" style="color:#666666;font-weight:400;letter-spacing: 1px;">
-                    We live and exist to create things and experiences people love.
-                    <br /> We craft things outperform expectations.
+                   <!-- We live and exist to create things and experiences people love.--><@spring.message "shouye_contcat2"/>
+                    <br /> <!--We craft things outperform expectations-->.<@spring.message "shouye_contcat3"/>
                 </div>
                 <div data-height="80"></div>
                 <div class="animate-fadeIn">
@@ -810,7 +811,7 @@
                     <div class="social-media">
                         <ul>
                             <li><a>15201626402</a></li>
-                            <li class="one"><a>Beijing City, Chaoyang District Beiyuan railway square</a></li>
+                            <li class="one"><a><!--Beijing City, Chaoyang District Beiyuan railway square--><@spring.message "shouye_address"/></a></li>
                             <li class="two"><a>1476249689@qq.com</a></li>
                         </ul>
                     </div>

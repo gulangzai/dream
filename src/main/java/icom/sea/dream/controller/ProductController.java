@@ -41,9 +41,11 @@ public class ProductController {
         return "test";
     }
 
-    @RequestMapping("/t")
-    public ModelAndView t(){
-        return new ModelAndView("t");
+    @RequestMapping("")
+    public String t(HttpSession session,Model model){
+        String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
+        model = productService.shouyeProductList(lang,model);
+        return "index";
     }
 
 

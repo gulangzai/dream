@@ -104,9 +104,9 @@
                         <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
                     </p>
                     <a href="javascript:;" class="a-upload-1">
-                        <input type="file" name="file" id="file1" onchange="imgUpload()">
+                        <input type="file" name="file" id="file1" onchange="imgUpload()"> 
                         <input type="hidden" id="img" value=""> 
-                        <img src="${product.imgUrl}" id="fileImage1">
+                        <img src="${product.imgUrl}" id="fileImage1"> 
                     </a>
                 </div>
                 <div class="photo-right">
@@ -235,24 +235,26 @@
         });
     });
 
-    function imgUpload() { 
+    function imgUpload() {
         $.ajaxFileUpload
-        ({
+        (
+            {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'file1', //文件上传域的ID
-                dataType: 'JSON', //返回值类型 一般设置为json
-                success: function (data, status)  //服务器成功响应处理函数
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数 
                 { 
                     var data = eval("("+data+")"); 
                     $("#fileImage1").attr("src",data.img);
-                    alert("图片上传成功");
+                    alert("图片上传成功"); 
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
-                { 
-                    alert('图片上传失败');
+                {
+                    alert(e);
                 }
-            })
+            }
+        )
         return false;
     }
     function picUpload() {
@@ -261,14 +263,14 @@
             {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'file2', //文件上传域的ID
-                dataType: 'JSON', //返回值类型 一般设置为json
+                fileElementId: 'file2', //文件上传域的ID 
+                dataType: 'JSON', //返回值类型 一般设置为json 
                 success: function (data, status)  //服务器成功响应处理函数
-                {
+                { 
                     console.log(data); 
                     var data = eval("("+data+")");
                     $("#fileImage2").attr("src",data.img);
-                    alert("图片上传成功");
+                    alert("图片上传成功"); 
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -288,8 +290,8 @@
             {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'file3', //文件上传域的ID
-                dataType: 'JSON', //返回值类型 一般设置为json
+                fileElementId: 'file3', //文件上传域的ID 
+                dataType: 'JSON', //返回值类型 一般设置为json 
                 success: function (data, status)  //服务器成功响应处理函数
                 {
                 	console.log(data); 
@@ -361,8 +363,7 @@
         }else if(zh_type=="品牌空间视觉"){
             en_type = "Brand space vision";
             type = 5;
-        }
-        debugger;
+        } 
       
         console.info($("#imgs").val());
         var productImgs = new Array();
