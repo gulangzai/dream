@@ -19,8 +19,8 @@ import org.springframework.web.servlet.support.RequestContext;
 @RequestMapping
 public class LocaleController {  
 
-    @Resource
-    private LocaleResolver localeResolver;
+ //   @Resource
+//    private LocaleResolver localeResolver;
 
     @RequestMapping(value="/change", method = {RequestMethod.GET})
     public String change(HttpServletRequest request, Model model, @RequestParam(value="lang", defaultValue="zh") String lang, @RequestParam(defaultValue = "index") String view){
