@@ -218,6 +218,13 @@
      * Created by maker on 2016/11/5.
      */
     var zh_type = "",labels = [];
+    var data_id =  "${product.type}";
+    if(data_id!=""){
+        $(".des-main .main-list .list-top p.one span[data-id = '"+data_id+"']").addClass('active');
+        $(".main-list").addClass('display-none');
+        $(".main-list[data-id = '"+data_id+"']").removeClass('display-none')
+    }
+   ;
     $(function () {
  
         $(".li-in").hover(function(){
@@ -243,13 +250,13 @@
             if($(this).hasClass("active")){
                 $(this).removeClass("active")
                 labels.splice($.inArray($(this).text(),labels),1);
-                alert(labels)
+             //   alert(labels)
             }else{
                 if($(".tubi-none").find(".active").length < 3){
                     $(this).addClass("active")
                     labels.push($(this).text());
-                    alert($(this).text())
-                    alert(labels)
+                //    alert($(this).text())
+                 //   alert(labels)
                 }else{
                     alert("最多选择3个")
                 }
@@ -280,7 +287,7 @@
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'file1', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
+                dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数 
                 { 
                     var data = eval("("+data+")"); 
@@ -353,7 +360,7 @@
    	  var productImgs = new Array();
       $("#uploadFiles>.image-li>img").each(function(ele){
       	productImgs.push($(this).attr("src"));
-      }); 
+      });
           
         if(zh_type==""){
             alert("请选择作品类别")
@@ -407,8 +414,8 @@
         }else if(zh_type=="品牌空间视觉"){
             en_type = "Brand space vision";
             type = 5;
-        } 
-      
+        }
+
         console.info($("#imgs").val());
       
         var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
