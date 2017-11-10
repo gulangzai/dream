@@ -23,7 +23,7 @@
         <div class="list-top clearfix">
             <p class="one clearfix">
                 <span class="first">请选择作品类别（单选）：</span>
-                <span data-id="1" class="active">城市形象</span>
+                <span data-id="1" >城市形象</span> <!--class="active"-->
                 <span data-id="2">品牌策划</span>
                 <span data-id="3">品牌平面设计</span>
                 <span data-id="4">品牌互联网设计</span>
@@ -181,22 +181,22 @@
           <!-- <label><input type="radio" name="radio">否</label>- -->
             <span class="p-wz">放置位置</span>
             <select name="num" id="num">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
+                <option value="1" <#if product.num==1>selected</#if>>1</option>
+                <option value="2" <#if product.num==2>selected</#if>>2</option>
+                <option value="3" <#if product.num==3>selected</#if>>3</option>
+                <option value="4" <#if product.num==4>selected</#if>>4</option>
+                <option value="5" <#if product.num==5>selected</#if>>5</option>
+                <option value="6" <#if product.num==6>selected</#if>>6</option>
+                <option value="7" <#if product.num==7>selected</#if>>7</option>
+                <option value="8" <#if product.num==8>selected</#if>>8</option>
+                <option value="9" <#if product.num==9>selected</#if>>9</option>
+                <option value="10" <#if product.num==10>selected</#if>>10</option>
+                <option value="11" <#if product.num==11>selected</#if>>11</option>
             </select>
             <span class="p-wz">作品维度</span>
             <select name="dimension" id="dimension">
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="2" <#if product.dimension==2>selected</#if>>2</option>
+                <option value="3" <#if product.dimension==3>selected</#if>>3</option>
             </select>
         </p>
     </div>
@@ -258,7 +258,7 @@
         });
     });
 
-    init();
+  //  init();
 
     //如果是编辑页存在初始化
     var id = 0;
@@ -445,7 +445,7 @@
                 en_descript : $("#en_descript").val(),      //英文表述
                 zh_descript : $("#zh_descript").val(),      //中文描述
                 imgUrl : $("#fileImage1").attr("src"),           //封面图片地址
-                picImg : $("#fileImage1").attr("src"),
+                picImg : $("#fileImage2").attr("src"),
                 dimension : $("#dimension").val(),         //2维作品或者3维作品，值为2或3
                 isHomePage : $("#isHomePage")[0].checked?1:0,        //是否显示在首页1是，0否
                 num : $("#num").val(),                //如果显示在首页填1-11数字，代表首页的位置，否则填0
