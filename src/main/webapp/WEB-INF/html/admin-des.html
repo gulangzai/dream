@@ -108,7 +108,7 @@
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file2" onchange="picUpload()">
                         <input type="hidden" id="pic" value="">
-                        <img src="${base}/images/icon-jia.png">
+                        <img src="${base}/images/icon-jia.png" id="fileImage2">
                     </a>
                 </div>
             </div>
@@ -227,8 +227,7 @@
                 fileElementId: 'file1', //文件上传域的ID
                 dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
-                {
-                   
+                { 
                     var data = eval("("+data+")");
                     console.log(data);
                     $("#fileImage1").attr("src",data.img);
@@ -247,12 +246,13 @@
             {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'pic', //文件上传域的ID
+                fileElementId: 'fileImage2', //文件上传域的ID
                 dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
-                    console.log(data);
-                    $("#pic").val(data);
+                    console.log(data); 
+                    var data = eval("("+data+")");
+                    $("#fileImage2").attr("src",data.img);
                     alert("图片上传成功");
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
@@ -263,14 +263,18 @@
         )
         return false;
     }
+
+    /**
+    * 上传多张图片
+    **/
     function imgsUpload() {
         $.ajaxFileUpload
         (
             {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'imgs', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
+                fileElementId: 'file3', //文件上传域的ID
+                dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
                     $("#imgs").val($("#imgs").val()+"_"+data);
