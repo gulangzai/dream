@@ -220,7 +220,9 @@
     /**
      * Created by maker on 2016/11/5.
      */
-    var zh_type = "",labels = [];
+  // var labels = [];
+
+
     var data_id =  "${product.type}";
    if(data_id!=""){
         $(".des-main .main-list .list-top p.one span[data-id = '"+data_id+"']").addClass('active');
@@ -229,14 +231,14 @@
        $(".tubi-none span").removeClass("active")
 
        $.each($(".tubi-none span"),function(index,label){
-          if($(this).html()=="product_zh_label1" ||
-              $(this).html()=="product_zh_label2" ||
-              $(this).html()=="product_zh_label3"){
+          if($(this).html()=="${product.zh_label1}" ||
+              $(this).html()=="${product.zh_label2}" ||
+              $(this).html()=="${product.zh_label3}"){
               $(this).addClass("active")
           }
        });
-    }
-   ;
+    };
+    
     $(function () {
  
         $(".li-in").hover(function(){
@@ -253,7 +255,7 @@
             var data_id = $(this).attr("data-id");
             $(".des-main .main-list .list-top p.one span").removeClass('active');
             $(".des-main .main-list .list-top p.one span[data-id = '"+data_id+"']").addClass('active');
-            zh_type = $(".des-main .main-list .list-top p.one span[data-id = '"+data_id+"']").html();
+
             $(".tubi-none").addClass('display-none');
             $(".tubi-none[data-id = '"+data_id+"']").removeClass('display-none');
             $(".tubi-none span").removeClass("active")
@@ -261,12 +263,12 @@
         $(".tubi-none span").bind("click", function () {
             if($(this).hasClass("active")){
                 $(this).removeClass("active")
-                labels.splice($.inArray($(this).text(),labels),1);
+              //  labels.splice($.inArray($(this).text(),labels),1);
              //   alert(labels)
             }else{
                 if($(".tubi-none").find(".active").length < 3){
                     $(this).addClass("active")
-                    labels.push($(this).text());
+                  //  labels.push($(this).text());
                 //    alert($(this).text())
                  //   alert(labels)
                 }else{
@@ -376,7 +378,19 @@
     }
 
     function add() {
-
+        var labels = [];
+        $.each($(".tubi-none span"),function(index,label){
+            if($(this).hasClass("active")){
+                labels.push($(this).text())
+            }
+        });
+        var zh_type = "";
+        $.each( $(".des-main .main-list .list-top p.one span"),function(index,n){
+            if($(this).hasClass("active")){
+                zh_type=$(this).text();
+            }
+        }); 
+        
    	  var productImgs = new Array();
       $("#uploadFiles>.image-li>img").each(function(ele){
       	productImgs.push($(this).attr("src"));
@@ -482,6 +496,8 @@
                 $("#result").empty();
                 //   $("#result").html(data)
                 $("#result").text(JSON.stringify(data))
+                alert("添加成功")
+                location.href="/dream/admin-list"
             }
         });
     }
@@ -495,7 +511,7 @@
             return "Research on Characteristic Towns";
         }else if(label=="市场调查"){
             return "market research";
-        }else if(label=="竞品分析"){
+        }else if(laben=="竞品分析"){
             return "Analysis for competitive products";
         }else if(label=="消费者研究"){
             return "Consumer behavior research";
@@ -529,7 +545,7 @@
             return "label";
         }else if(label=="空间装置"){
             return "Space device";
-        }else if(label=="平面设计打样及制作") {
+        }else if(labbel=="平面设计打样及制作") {
             return "Graphic design proofing and production";
         }else if(label=="画册、包装印刷制作"){
             return "Printing and making of album and packaging";
@@ -546,7 +562,19 @@
 
     function edit() {
     	 id  = '${id}';
-    	 alert("edit"+id);
+    //	 alert("edit"+id);
+        var labels = [];
+        $.each($(".tubi-none span"),function(index,label){
+            if($(this).hasClass("active")){
+                labels.push($(this).text())
+            }
+        });
+        var zh_type = "";
+        $.each( $(".des-main .main-list .list-top p.one span"),function(index,n){
+            if($(this).hasClass("active")){
+                zh_type=$(this).text();
+            }
+        }); 
     	 var productImgs = new Array();
          $("#uploadFiles>.image-li>img").each(function(ele){
          	productImgs.push($(this).attr("src"));
@@ -652,14 +680,17 @@
             },
             success : function(data) {
                 console.log(data)
+
                 $("#result").empty();
                 //   $("#result").html(data)
                 $("#result").text(JSON.stringify(data))
+                alert("编辑成功")
+                location.href="/dream/admin-list"
             }
         });
     }
 
  
 </script>
-</body>
+</body> 
 </html>
