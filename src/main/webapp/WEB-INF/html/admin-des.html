@@ -97,7 +97,7 @@
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file1" onchange="imgUpload()">
                         <input type="hidden" id="img" value="">
-                        <img src="${base}/images/icon-jia.png">
+                        <img src="${base}/images/icon-jia.png" id="fileImage1">
                     </a>
                 </div>
                 <div class="photo-right">
@@ -219,41 +219,41 @@
         });
     });
 
-    function imgUpload() {
+    function imgUpload() { 
         $.ajaxFileUpload
-        (
-            {
-                url: '/demo/imgUpload', //用于文件上传的服务器端请求地址
+        ({
+                url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'img', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
+                fileElementId: 'file1', //文件上传域的ID
+                dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
-                    console.log(data)
-                    $("#img").val(data)
-                    alert("图片上传成功")
+                   
+                    var data = eval("("+data+")");
+                    console.log(data);
+                    $("#fileImage1").attr("src",data.img);
+                    alert("图片上传成功");
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
-                {
-                    alert(e);
+                { 
+                    alert('图片上传失败');
                 }
-            }
-        )
+            })
         return false;
     }
     function picUpload() {
         $.ajaxFileUpload
         (
             {
-                url: '/demo/imgUpload', //用于文件上传的服务器端请求地址
+                url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'pic', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
+                dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
-                    console.log(data)
-                    $("#pic").val(data)
-                    alert("图片上传成功")
+                    console.log(data);
+                    $("#pic").val(data);
+                    alert("图片上传成功");
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -267,7 +267,7 @@
         $.ajaxFileUpload
         (
             {
-                url: '/demo/imgUpload', //用于文件上传的服务器端请求地址
+                url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'imgs', //文件上传域的ID
                 dataType: 'json', //返回值类型 一般设置为json

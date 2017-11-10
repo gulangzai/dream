@@ -4,6 +4,8 @@ import icom.sea.dream.entity.resp.RespProduct;
 import icom.sea.dream.service.ProductService;
 import icom.sea.dream.util.ConfigUtil;
 import icom.sea.dream.util.IDGenertor;
+
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -356,7 +358,7 @@ public class ProductController {
      */
     @RequestMapping(value="/imgUpload",method=RequestMethod.POST)
     @ResponseBody
-    public String fileUpload(@RequestParam(value = "file") MultipartFile file) throws IOException {
+    public String fileUpload(@RequestParam(value = "file") MultipartFile file){
         System.out.println("come in ");
         ConfigUtil configUtil = new ConfigUtil();
         String	fileName = new SimpleDateFormat("YYYYMMDDHHmmss").format(new Date())+"_main_"+ IDGenertor.getOrderId()+"."+configUtil.getProperty("suffix");
@@ -368,8 +370,13 @@ public class ProductController {
             file.transferTo(targetFile);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        return configUtil.getProperty("imgHttp")+fileName;
+        } 
+        Map map = new HashMap();  
+        String result = "success";  
+        map.put("data", result);  
+        map.put("img", configUtil.getProperty("imgHttp")+fileName); 
+        String jsonStr = String.valueOf(new JSONObject(map));
+        return jsonStr; 
     }
 
 /*
