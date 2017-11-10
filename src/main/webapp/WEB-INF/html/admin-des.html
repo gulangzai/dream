@@ -28,18 +28,18 @@
                 <span data-id="3">品牌平面设计</span>
                 <span data-id="4">品牌互联网设计</span>
                 <span data-id="5">品牌空间设计</span>
-                <span data-id="6">制作和施工</span>
+               <!-- <span data-id="6">制作和施工</span>-->
                 
             </p>
             <p class="two">请选择作品标签（最多三个）：</p>
             <p  data-id="1" class="three-1 tubi-none clearfix">
-                <span class="first">城市形象</span>
+               <!-- <span class="first">城市形象</span>-->
                 <span>景观/公共艺术</span> 
                 <span>建筑/民宿</span> 
                 <span>特色小镇研究</span>
             </p>
             <p  data-id="2" class="three-2 tubi-none display-none clearfix">
-                <span class="first">品牌全案</span>
+              <!--  <span class="first">品牌全案</span>-->
                 <span>品牌策划</span>
                 <span>市场调查</span>
                 <span>竞品分析</span>
@@ -49,7 +49,7 @@
                 <span>品牌命名</span>
             </p>
             <p  data-id="3" class="three-3 tubi-none display-none clearfix">
-                <span class="first">品牌平面设计</span>
+               <!-- <span class="first">品牌平面设计</span>-->
                 <span>logo设计</span>
                 <span>VI设计</span>
                 <span>产品包装</span>
@@ -57,25 +57,25 @@
                 <span>画册</span>
             </p>
             <p  data-id="4" class="three-4 tubi-none display-none clearfix">
-                <span class="first">品牌互联网设计</span>
+               <!-- <span class="first">品牌互联网设计</span>-->
                 <span>网站设计</span>
                 <span>APP设计</span>
                 <span>小程序设计</span>
                 <span>H5场景应用</span>
             </p>
             <p  data-id="5" class="three-5 tubi-none display-none clearfix">
-                <span class="first">品牌空间设计</span>
+               <!-- <span class="first">品牌空间设计</span>-->
                 <span>室内空间设计</span>
                 <span>主题空间设计</span>
                 <span>空间装置</span> 
             </p>
-            <p  data-id="6" class="three-6 tubi-none display-none clearfix">
+           <!-- <p  data-id="6" class="three-6 tubi-none display-none clearfix">
                 <span class="first">制作和施工</span>
                 <span>平面设计打样及制作</span>
                 <span>画册、包装印刷制作</span> 
                 <span>网站.APP.H5开发</span>
                 <span>店面装修总包</span>
-            </p>
+            </p>-->
         </div>
         <div class="list-middle">
             <p class="furo clearfix">
@@ -314,7 +314,7 @@
                 { 
                     var data = eval("("+data+")"); 
                     $("#fileImage1").attr("src",data.img);
-                    alert("图片上传成功"); 
+                //    alert("图片上传成功");
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -337,7 +337,7 @@
                     console.log(data); 
                     var data = eval("("+data+")");
                     $("#fileImage2").attr("src",data.img);
-                    alert("图片上传成功"); 
+                 //   alert("图片上传成功");
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -366,7 +366,7 @@
                     $("#imgs").val($("#imgs").val()+"_"+data.img);
                     $("#uploadFiles").append("<div class='image-li'><img  src='"+data.img+"'><p><a onclick='deleteImg(this)'>删除</a></p></div>"); 
                     console.log(data)
-                    alert("图片上传成功")
+                 //   alert("图片上传成功")
                 },
                 error: function (data, status, e)//服务器响应失败处理函数
                 {
@@ -449,10 +449,10 @@
         }else if(zh_type=="品牌空间设计"){
             en_type = "Brand space vision";
             type = 5;
-        }else if(zh_type=="制作和施工"){
+        }/*else if(zh_type=="制作和施工"){
         	en_type = "construction";
             type = 6;
-        }
+        }*/
  
 
         
@@ -491,7 +491,7 @@
                 en_descript : $("#en_descript").val(),      //英文表述
                 zh_descript : $("#zh_descript").val(),      //中文描述
                 imgUrl : $("#fileImage1").attr("src"),           //封面图片地址
-                picImg : $("#fileImage2").attr("src"),
+                picUrl : $("#fileImage2").attr("src"),
                 dimension : $("#dimension").val(),         //2维作品或者3维作品，值为2或3
                 isHomePage : $("#isHomePage")[0].checked?1:0,        //是否显示在首页1是，0否
                 num : $("#num").val(),                //如果显示在首页填1-11数字，代表首页的位置，否则填0
