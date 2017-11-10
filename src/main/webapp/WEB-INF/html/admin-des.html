@@ -69,22 +69,22 @@
             <p class="furo clearfix">
                 <span class="color">作品标题</span>
                 <span class="input-1">
-                    <input type="text" name="zh_title" id="zh_title">
+                    <input type="text" name="zh_title" id="zh_title" value="中文">
                     <span>中文</span>
                 </span>
                 <span class="input-2">
-                    <input type="text" name="en_title" id="en_title">
+                    <input type="text" name="en_title" id="en_title" value="english">
                     <span>英文</span>
                 </span>
             </p>
             <p class="furo clearfix">
                 <span  class="color">作品描述</span>
                 <span class="input-1">
-                    <textarea rows="8" name="zh_descript" id="zh_descript"></textarea>
+                    <textarea rows="8" name="zh_descript" id="zh_descript">中文测试</textarea>
                     <span>中文</span>
                 </span>
                 <span class="input-2">
-                    <textarea rows="8" name="en_descript" id="en_descript"></textarea>
+                    <textarea rows="8" name="en_descript" id="en_descript">english</textarea>
                     <span>英文</span>
                 </span>
             </p>
@@ -122,8 +122,8 @@
                     <input type="hidden" id="imgs" value="">
                 </a>
             </p>
-            <div class="bottom-image clearfix">
-                <div class="image-li">
+            <div class="bottom-image clearfix" id="uploadFiles">
+               <!--  <div class="image-li">
                     <img src="${base}/images/2.jpg">
                     <p>删除</p>
                 </div>
@@ -134,7 +134,7 @@
                 <div class="image-li">
                     <img src="${base}/images/2.jpg">
                     <p>删除</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -245,7 +245,7 @@
             {
                 url: '${base}/imgUpload', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'fileImage2', //文件上传域的ID
+                fileElementId: 'file2', //文件上传域的ID
                 dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
@@ -276,7 +276,10 @@
                 dataType: 'JSON', //返回值类型 一般设置为json
                 success: function (data, status)  //服务器成功响应处理函数
                 {
-                    $("#imgs").val($("#imgs").val()+"_"+data);
+                	console.log(data); 
+                    var data = eval("("+data+")");  
+                    $("#imgs").val($("#imgs").val()+"_"+data.img);
+                    $("#uploadFiles").append("<div class='image-li'><img src='"+data.img+"'><p>删除</p></div>"); 
                     console.log(data)
                     alert("图片上传成功")
                 },
@@ -314,15 +317,15 @@
             alert( "请填写英文描述");
             return false;
         }
-        if($("img").val()==""){
+        if($("#fileImage1").attr("src")==""){
             alert("请选择主图")
             return false;
         }
-        if($("pic").val()==""){
+        if($("#fileImage1").attr("src")==""){
             alert("请选择封面")
             return false;
         }
-        if($("imgs").val()==""){
+        if($("#imgs").val()==""){
             alert("请选择作品图")
             return false;
         }
@@ -343,9 +346,15 @@
             en_type = "Brand space vision";
             type = 5;
         }
+        debugger;
+      
+        console.info($("#imgs").val());
         var productImgs = new Array();
-        productImgs = $("imgs").val().split("_");
+        $("#uploadFiles>.image-li>img").each(function(ele){
+        	productImgs.push($(this).attr("src"));
+        }); 
         var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
+        
         $.each(labels,function(index,label){
             if(index==0){
                 zh_label1 = label;
@@ -376,8 +385,8 @@
                 zh_label3 : zh_label3,
                 en_descript : $("#en_descript").val(),      //英文表述
                 zh_descript : $("#zh_descript").val(),      //中文描述
-                imgUrl : $("#img").val(),           //封面图片地址
-                picImg : $("#pic").val(),
+                imgUrl : $("#fileImage1").attr("src"),           //封面图片地址
+                picImg : $("#fileImage1").attr("src"),
                 dimension : $("#dimension").val(),         //2维作品或者3维作品，值为2或3
                 isHomePage : $("#isHomePage")[0].checked?1:0,        //是否显示在首页1是，0否
                 num : $("#num").val(),                //如果显示在首页填1-11数字，代表首页的位置，否则填0
