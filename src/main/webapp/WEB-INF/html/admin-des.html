@@ -106,7 +106,13 @@
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file1" onchange="imgUpload()"> 
                         <input type="hidden" id="img" value=""> 
-                        <img src="${product.imgUrl}" id="fileImage1"> 
+                         <#if product.imgUrl??>
+                           <img src="${product.imgUrl}" id="fileImage1"> 
+                         <#else>
+                           <img src="${base}/images/icon-jia.png" id="fileImage1"> 
+                         </#if>
+                       
+                       
                     </a>
                 </div>
                 <div class="photo-right">
@@ -116,8 +122,12 @@
                     </p>
                     <a href="javascript:;" class="a-upload-1">
                         <input type="file" name="file" id="file2" onchange="picUpload()">
-                        <input type="hidden" id="pic" value="">
-                        <img src="${product.picUrl}" id="fileImage2">
+                        <input type="hidden" id="pic" value="">  
+                         <#if product.picUrl??>
+                           <img src="${product.picUrl}" id="fileImage2">
+                         <#else>
+                           <img src="${base}/images/icon-jia.png" id="fileImage2"> 
+                         </#if>
                     </a>
                 </div>
             </div>
@@ -159,7 +169,14 @@
     <div class="main-bottom">
         <p class="">
             <span class="p-left">设置为首页作品</span>
-            <label class="tu"><input type="checkbox" name="isHomePage" id="isHomePage">是</label>
+            <label class="tu"> 
+            <#if product.isHomePage==1>
+                <input type="checkbox" name="isHomePage" id="isHomePage" checked>是
+            <#else>
+               <input type="checkbox" name="isHomePage" id="isHomePage">是
+            </#if>
+            
+            </label>
           <!-- <label><input type="radio" name="radio">否</label>- -->
             <span class="p-wz">放置位置</span>
             <select name="num" id="num">
@@ -185,7 +202,11 @@
 </div>
 <div class="bottom-bottom">
     <div class="bottom-a clearfix">
-        <a href="javascript:add()">添加</a>
+        <#if product?exists>
+          <a href="javascript:edit()">编辑</a>
+         <#else>
+           <a href="javascript:add()">添加</a>
+        </#if>  
     </div>
 </div>
 <!--<script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>-->
@@ -198,6 +219,7 @@
      */
     var zh_type = "",labels = [];
     $(function () {
+ 
         $(".li-in").hover(function(){
             $(this).find(".tubi").stop().toggle(500)
         })
@@ -235,6 +257,22 @@
         });
     });
 
+    init();
+
+    //如果是编辑页存在初始化
+    function init(){
+         var id = '${id}';
+         if(id!=''){
+        	 var zh_title = "${product.zh_title}";
+        	 var dimension = "${product.dimension}";
+             var num =  "${product.num}"; 
+             alert(num);
+             $("#num").find("option[text='"+num+"']").attr("selected",true);
+             alert(zh_title);
+         }
+        
+    }
+    
     function imgUpload() {
         $.ajaxFileUpload
         (
@@ -311,6 +349,12 @@
     }
 
     function add() {
+
+   	  var productImgs = new Array();
+      $("#uploadFiles>.image-li>img").each(function(ele){
+      	productImgs.push($(this).attr("src"));
+      }); 
+          
         if(zh_type==""){
             alert("请选择作品类别")
             return false;
@@ -343,8 +387,8 @@
             alert("请选择封面")
             return false;
         }
-        if($("#imgs").val()==""){
-            alert("请选择作品图")
+        if(productImgs.length==0){
+            alert("请上传作品图")
             return false;
         }
         var en_type,type;
@@ -366,10 +410,7 @@
         } 
       
         console.info($("#imgs").val());
-        var productImgs = new Array();
-        $("#uploadFiles>.image-li>img").each(function(ele){
-        	productImgs.push($(this).attr("src"));
-        }); 
+      
         var zh_label1 = "",en_label1 = "",zh_label2="",en_label2 = "",zh_label3="",en_label3="";
         
         $.each(labels,function(index,label){
@@ -465,6 +506,12 @@
 
 
     function edit() {
+
+    	 var productImgs = new Array();
+         $("#uploadFiles>.image-li>img").each(function(ele){
+         	productImgs.push($(this).attr("src"));
+         }); 
+         
         if(zh_type==""){
             alert("请选择作品类别")
             return false;
@@ -497,8 +544,8 @@
             alert("请选择封面")
             return false;
         }
-        if($("#imgs").val()==""){
-            alert("请选择作品图")
+        if(productImgs.length==0){
+            alert("请上传作品图")
             return false;
         }
         var en_type,type;
