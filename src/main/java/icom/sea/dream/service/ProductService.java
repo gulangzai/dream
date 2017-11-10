@@ -170,8 +170,8 @@ public class ProductService {
         product.setNum(num);
         int time = (int)(System.currentTimeMillis()/1000);
         product.setTime(time);
-        if(num>0){
-            productDao.update("update Product set num=0 where dimension=?",dimension);
+        if(isHomePage==1 && num>0){
+            productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
         }
         Serializable id = productDao.save(product);
         for(String img : productImgs){
@@ -265,8 +265,8 @@ public class ProductService {
             if(isHomePage==0)
                 num=0;
             product.setNum(num);
-            if(num>0){
-                productDao.update("update Product set num=0 where dimension=?",dimension);
+            if(isHomePage==1 && num>0){
+                productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
             }
             productDao.update(product);
             List<ProductImg> productImgsList = productDao.find("from ProductImg where productId=?",id);
