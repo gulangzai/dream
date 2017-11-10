@@ -25,7 +25,7 @@ public class RespProduct {
         this.title = lang.equals("en")?product.getEn_title():product.getZh_title();
         this.typeId = product.getType();
         this.type =  lang.equals("en")?product.getEn_type():product.getZh_type();
-        this.label1 =  lang.equals("en")?product.getEn_label1():product.getZh_label1();
+        this.label1 =  lang.equals("en")?(null==product.getEn_label1()?"":product.getEn_label1()):(null==product.getZh_label1()?"":product.getZh_label1());
         this.label2 =  lang.equals("en")?product.getEn_label2():product.getZh_label2();
         this.label3 =  lang.equals("en")?product.getEn_label3():product.getZh_label3();
         this.descript = lang.equals("en")?product.getEn_descript():product.getZh_descript();
