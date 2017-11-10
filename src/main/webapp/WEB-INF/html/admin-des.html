@@ -24,45 +24,54 @@
                 <span class="first">请选择作品类别（单选）：</span>
                 <span data-id="1" class="active">城市形象</span>
                 <span data-id="2">品牌策划</span>
-                <span data-id="3">品牌平面视觉</span>
-                <span data-id="4">品牌互联网视觉</span>
-                <span data-id="5">品牌空间视觉</span>
+                <span data-id="3">品牌平面设计</span>
+                <span data-id="4">品牌互联网设计</span>
+                <span data-id="5">品牌空间设计</span>
+                <span data-id="6">制作和施工</span>
+                
             </p>
             <p class="two">请选择作品标签（最多三个）：</p>
             <p  data-id="1" class="three-1 tubi-none clearfix">
                 <span class="first">城市形象</span>
-                <span>景观</span>
-                <span>公共艺术</span>
-                <span>建筑</span>
-                <span>民居</span>
-                <span>特色小镇</span>
+                <span>景观/公共艺术</span> 
+                <span>建筑/民宿</span> 
+                <span>特色小镇研究</span>
             </p>
             <p  data-id="2" class="three-2 tubi-none display-none clearfix">
                 <span class="first">品牌策划</span>
                 <span>市场调查</span>
-                <span>消费者研究</span>
+                <span>竞品分析</span>
+                <span>消费者行为研究</span>
                 <span>品牌定位</span>
+                <span>品牌核心价值提炼</span>
                 <span>品牌命名</span>
             </p>
             <p  data-id="3" class="three-3 tubi-none display-none clearfix">
-                <span class="first">品牌平面视觉</span>
+                <span class="first">品牌平面设计</span>
                 <span>logo设计</span>
-                <span>VI系统</span>
+                <span>VI设计</span>
                 <span>产品包装</span>
                 <span>海报</span>
                 <span>书册</span>
             </p>
             <p  data-id="4" class="three-4 tubi-none display-none clearfix">
-                <span class="first">品牌互联网视觉</span>
-                <span>网站</span>
-                <span>APP</span>
-                <span>H5</span>
+                <span class="first">品牌互联网设计</span>
+                <span>网站设计</span>
+                <span>APP设计</span>
+                <span>小程序设计</span>
+                <span>H5场景应用</span>
             </p>
             <p  data-id="5" class="three-5 tubi-none display-none clearfix">
                 <span class="first">品牌空间视觉</span>
-                <span>主题空间</span>
-                <span>导视</span>
-                <span>空间装置</span>
+                <span>主题空间设计</span>
+                <span>空间装置</span> 
+            </p>
+            <p  data-id="6" class="three-6 tubi-none display-none clearfix">
+                <span class="first">制作和施工</span>
+                <span>平面设计打样及制作</span>
+                <span>画册、包装印刷制作</span> 
+                <span>网站.APP.H5开发</span>
+                <span>店面装修总包</span>
             </p>
         </div>
         <div class="list-middle">
@@ -411,11 +420,11 @@
         }else if(label=="市场调查"){
             return "market research";
         }else if(label=="消费者研究"){
-            return "label";
+            return "Consumer behavior research";
         }else if(label=="品牌定位"){
-            return "label";
+            return "Brand positioning";
         }else if(label=="品牌命名"){
-            return "label";
+            return "Brand naming";
         }else if(label=="logo设计"){
             return "Logo design";
         }else if(label=="VI系统"){
@@ -435,11 +444,11 @@
         }else if(label=="H5"){
             return "H5 scene application";
         }else if(label=="主题空间"){
-            return "label";
+            return "Topic space design";
         }else if(label=="导视"){
             return "label";
         }else if(label=="空间装置"){
-            return "label";
+            return "Space device";
         }
 
     }
