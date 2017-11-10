@@ -107,12 +107,12 @@
                         <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
                     </p>
                     <a href="javascript:;" class="a-upload-1">
-                        <input type="file" name="file" id="file1" onchange="imgUpload()"> 
+                        <input type="file" name="file" id="file1" style="width:400px;height:400px" onchange="imgUpload()"> 
                         <input type="hidden" id="img" value=""> 
                          <#if product.imgUrl??>
-                           <img src="${product.imgUrl}" id="fileImage1"> 
+                           <img   width='400px' height='400px'  src="${product.imgUrl}" id="fileImage1"> 
                          <#else>
-                           <img src="${base}/images/icon-jia.png" id="fileImage1"> 
+                           <img   width='400px' height='400px'  src="${base}/images/icon-jia.png" id="fileImage1"> 
                          </#if>
                        
                        
@@ -124,12 +124,12 @@
                         <span>（支持jpg、png格式，封面显示尺寸为4：3比例）</span>
                     </p>
                     <a href="javascript:;" class="a-upload-1">
-                        <input type="file" name="file" id="file2" onchange="picUpload()">
+                        <input type="file" name="file" id="file2" style="width:400px;height:400px" onchange="picUpload()">
                         <input type="hidden" id="pic" value="">  
                          <#if product.picUrl??>
-                           <img src="${product.picUrl}" id="fileImage2">
+                           <img width='400px' height='400px' src="${product.picUrl}" id="fileImage2">
                          <#else>
-                           <img src="${base}/images/icon-jia.png" id="fileImage2"> 
+                           <img width='400px' height='400px' src="${base}/images/icon-jia.png" id="fileImage2"> 
                          </#if>
                     </a>
                 </div>
@@ -364,7 +364,7 @@
                 	console.log(data); 
                     var data = eval("("+data+")");  
                     $("#imgs").val($("#imgs").val()+"_"+data.img);
-                    $("#uploadFiles").append("<div class='image-li'><img src='"+data.img+"'><p><a onclick='deleteImg(this)'>删除</a></p></div>"); 
+                    $("#uploadFiles").append("<div class='image-li'><img  src='"+data.img+"'><p><a onclick='deleteImg(this)'>删除</a></p></div>"); 
                     console.log(data)
                     alert("图片上传成功")
                 },
