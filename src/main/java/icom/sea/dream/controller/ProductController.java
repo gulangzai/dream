@@ -185,10 +185,10 @@ public class ProductController {
     }
 
   
-    @RequestMapping(value = "/admin-delete/{id}",method = RequestMethod.GET)
-    @ResponseBody
-    public  Map<String,?> adminDelete(@PathVariable int id){ 
-        return  productService.del(id);
+    @RequestMapping(value = "/admin-delete/{id}",method = RequestMethod.GET) 
+    public  String adminDelete(@PathVariable int id){ 
+        productService.del(id);
+        return "admin-list";
     }
 
     /**
