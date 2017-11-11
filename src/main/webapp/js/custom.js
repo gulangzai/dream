@@ -48,9 +48,11 @@ jQuery(document).ready(function() {
         jQuery('.loader-wrapper').fadeOut(300);
         jQuery('#main-menu').fadeIn(300);
 
-        jQuery('video').each(function(){
-            jQuery(this)[0].play();
-            jQuery(this).parents('.section').addClass('flv_video');
+        jQuery('video').each(function(i,n){  
+        	if(i==0){
+                jQuery(this)[0].play();
+                jQuery(this).parents('.section').addClass('flv_video');
+        	}
         })
     });
 

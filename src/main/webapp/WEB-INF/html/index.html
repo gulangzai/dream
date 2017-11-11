@@ -33,9 +33,11 @@
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="${base}/css/video-js.css" rel="stylesheet">
+ <!--    <link href="${base}/css/video-js.css" rel="stylesheet"> -->
+  <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
     <!-- If you'd like to support IE8 -->
-    <script src="${base}/js/videojs-ie8.min.js"></script>
+    <script src="${base}/js/videojs-ie8.min.js"></script>  
+  <!--   <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
     <style>
         .m{ width: 100%; height: 100%; margin-left: auto; margin-right: auto;}
         #my-video{ width: 100%; height: 450px;}
@@ -194,8 +196,8 @@
                             <div class="wpb_wrapper">
                                 <div class="wpb_raw_code wpb_content_element wpb_raw_html">
                                     <div class="wpb_wrapper">
-                                        <div id="home-video" class="myVideo" data-image-src="http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg" style="background-image: url(&quot;http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg&quot;);">
-                                            <video id="youngsVideo" autoplay="stop" loop="loop" muted="" width="300" height="150">
+                                        <div id="home-video" class="myVideo" autoplay="autoplay" data-image-src="http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg" style="background-image: url(&quot;http://www.youngs-group.com/wordpress/wp-content/uploads/2015/06/DSC_3148-1.jpg&quot;);">
+                                            <video id="youngsVideo"  loop="loop" muted="" width="300" height="150">
                                                 <source src="${base}/images/youngs.mp4" type="video/mp4">
                                             </video>
                                         </div>
@@ -736,23 +738,27 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-10">
-                            <div class="m">
-                                <video id="my-video" class="video-js" controls preload="auto" poster="${base}/images/banner.jpg" data-setup="{}" controls>
+                           <div class="m">
+                                <video id="my-video" class="video-js"  controls  preload="auto"   width="740" height="400"  poster="${base}/images/banner.jpg" data-setup='{"autoplay": false}'>
                                     <source src="${base}/images/oceans.mp4" type="video/mp4">
                                     <p class="vjs-no-js">
                                         To view this video please enable JavaScript, and consider upgrading to a web browser that
                                         <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                                     </p>
-                                </video>
-                                <script src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>
+                                </video> 
+                                 <script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
                                 <script type="text/javascript">
-                                    var myPlayer = videojs('my-video');
+                                    var myPlayer = videojs('my-video',{"autoplay":false});
                                     videojs("my-video").ready(function(){
-                                        var myPlayer = this;
-                                        myPlayer.play();
-                                    });
+                                    	  var myPlayer = this; 
+                                        console.info(myPlayer);
+                                         myPlayer.pause(); 
+                                    });    
                                 </script>
-                            </div>
+                            </div>  
+                            
+                             
+	
                             <div class="video-main clearfix">
                                 <div class="main-left" style="width:25%; float: left;">
                                     <img src="${base}/images/home-08.png" class="img-responsive">
@@ -845,5 +851,7 @@
 <script type="text/javascript" src="${base}/js/custom.js?ver=4.7.7"></script>
 <script type="text/javascript" src="${base}/js/js_composer_front.min.js?ver=5.0"></script>
 <script type="text/javascript" src="${base}/js/waypoints.min.js?ver=5.0"></script>
+<script>  
+</script>
 </body>
 </html>

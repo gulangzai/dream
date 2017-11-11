@@ -5755,7 +5755,7 @@ img.aligncenter,
 }
 .abouts .about-list h4{ color:#333333; margin-bottom: 0; font-weight: 600; margin-top: 1.6rem; }
 .abouts .about-list p.one{ color:#666666; margin-top: .5rem; font-weight: 400}
-.abouts .about-list p.two{ color:#999999; margin-bottom: 1rem; font-weight: 100;}
+.abouts .about-list p.two{ color:#999999; margin-bottom: 1rem; font-weight: 100;height:100%}
 .abouts .about-list .col-sm-3{ margin-bottom: 30px; text-align: left;}
 .image-li{ overflow: hidden;}
 .image-li img {
