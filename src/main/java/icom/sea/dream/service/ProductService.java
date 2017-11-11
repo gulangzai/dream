@@ -173,6 +173,7 @@ public class ProductService {
         if(isHomePage==1 && num>0){
             productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
         }
+        System.out.println(num+" ,,,,,,,,,,,,,,,,,");
         Serializable id = productDao.save(product);
         for(String img : productImgs){
             ProductImg productImg = new ProductImg();

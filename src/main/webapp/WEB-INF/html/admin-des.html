@@ -24,49 +24,47 @@
             <p class="one clearfix">
                 <span class="first">请选择作品类别（单选）：</span>
                 <span data-id="1" >城市形象</span> <!--class="active"-->
-                <span data-id="2">品牌全案</span>
+                <span data-id="2">品牌策划</span>
                 <span data-id="3">品牌平面设计</span>
                 <span data-id="4">品牌互联网设计</span>
                 <span data-id="5">品牌空间设计</span>
-               <!-- <span data-id="6">制作和施工</span>-->
+
                 
             </p>
             <p class="two">请选择作品标签（最多三个）：</p>
             <p  data-id="1" class="three-1 tubi-none clearfix">
-               <!-- <span class="first">城市形象</span>-->
-                <span>景观/公共艺术</span> 
-                <span>建筑/民宿</span> 
+               <span class="first">城市形象</span>
+                <span>景观</span>
+                <span>公共艺术</span>
+                <span>建筑</span>
+                <span>民宿</span>
                 <span>特色小镇研究</span>
             </p>
             <p  data-id="2" class="three-2 tubi-none display-none clearfix">
-              <!--  <span class="first">品牌全案</span>-->
-                <span>品牌策划</span>
+               <span class="first">品牌全案</span>
                 <span>市场调查</span>
-                <span>竞品分析</span>
-                <span>消费者行为研究</span>
+                <span>消费者研究</span>
                 <span>品牌定位</span>
-                <span>品牌核心价值提炼</span>
                 <span>品牌命名</span>
             </p>
             <p  data-id="3" class="three-3 tubi-none display-none clearfix">
-               <!-- <span class="first">品牌平面设计</span>-->
+                <span class="first">品牌平面设计</span>
                 <span>logo设计</span>
                 <span>VI设计</span>
                 <span>产品包装</span>
                 <span>海报</span>
-                <span>画册</span>
+                <span>书册</span>
             </p>
             <p  data-id="4" class="three-4 tubi-none display-none clearfix">
-               <!-- <span class="first">品牌互联网设计</span>-->
-                <span>网站设计</span>
-                <span>APP设计</span>
-                <span>小程序设计</span>
-                <span>H5场景应用</span>
+                <span class="first">品牌互联网设计</span>
+                <span>网站</span>
+                <span>APP</span>
+                <span>H5</span>
             </p>
             <p  data-id="5" class="three-5 tubi-none display-none clearfix">
-               <!-- <span class="first">品牌空间设计</span>-->
-                <span>室内空间设计</span>
-                <span>主题空间设计</span>
+                <span class="first">品牌空间设计</span>
+                <span>主题空间</span>
+                <span>导视</span>
                 <span>空间装置</span> 
             </p>
            <!-- <p  data-id="6" class="three-6 tubi-none display-none clearfix">
@@ -195,10 +193,10 @@
                 <option value="10" <#if product.num==10>selected</#if>>10</option>
                 <option value="11" <#if product.num==11>selected</#if>>11</option>
             </select>
-            <span class="p-wz">作品维度</span>
+            <span class="p-wz">第几屏展示</span>
             <select name="dimension" id="dimension">
-                <option value="2" <#if product.dimension==2>selected</#if>>2</option>
-                <option value="3" <#if product.dimension==3>selected</#if>>3</option>
+                <option value="2" <#if product.dimension==2>selected</#if>>第一屏2</option>
+                <option value="3" <#if product.dimension==3>selected</#if>>第二屏</option>
             </select>
         </p>
     </div>
@@ -425,7 +423,7 @@
             alert("请选择主图")
             return false;
         }
-        if($("#fileImage1").attr("src")==""){
+        if($("#fileImage2").attr("src")==""){
             alert("请选择封面")
             return false;
         }
@@ -508,56 +506,46 @@
     }
 
     function zhToEnLlabel(label) {
-        if(label=="景观/公共艺术"){
-            return "Landscape / Public Art";
-        }else if(label=="建筑/民宿"){
-            return "Building / hostel";
+        if(label=="景观"){
+            return "Landscape";
+        }else if(label=="公共艺术"){
+            return "Public Art";
+        }else if(label=="建筑"){
+            return "Building";
+        }else if(label=="民宿"){
+            return "hostel";
         }else if(label=="特色小镇研究"){
             return "Research on Characteristic Towns";
         }else if(label=="市场调查"){
             return "market research";
-        }else if(label=="竞品分析"){
-            return "Analysis for competitive products";
         }else if(label=="消费者研究"){
-            return "Consumer behavior research";
+            return "Consumer research";
         }else if(label=="品牌定位"){
             return "Brand positioning";
         }else if(label=="品牌命名"){
             return "Brand naming";
         }else if(label=="logo设计"){
-            return "Logo design";
+            return "Logo";
         }else if(label=="VI系统"){
-            return "VI design";
+            return "VI";
         }else if(label=="产品包装"){
             return "Product packaging";
         }else if(label=="海报"){
             return "poster";
-        }else if(label=="画册"){
+        }else if(label=="书册"){
             return "Picture album";
-        }else if(label=="网站设计"){
-            return "Website design";
-        }else if(label=="APP设计"){
-            return "APP design";
-        }else if(label=="小程序设计"){
-            return "Small program design";
-        }else if(label=="H5场景应用"){
-            return "H5 scene application";
-        }else if(label=="室内空间设计"){
-            return "Interior space design";
-        }else if(label=="主题空间设计"){
-            return "Topic space design";
+        }else if(label=="网站"){
+            return "Website";
+        }else if(label=="APP"){
+            return "APP";
+        }else if(label=="H5"){
+            return "h5";
+        }else if(label=="主题空间"){
+            return "Topic space";
         }else if(label=="导视"){
-            return "label";
+            return "Guide";
         }else if(label=="空间装置"){
             return "Space device";
-        }else if(label=="平面设计打样及制作") {
-            return "Graphic design proofing and production";
-        }else if(label=="画册、包装印刷制作"){
-            return "Printing and making of album and packaging";
-        }else if(label=="网站.APP.H5开发"){
-            return "Website.APP.H5 development";
-        }else if(label=="店面装修总包"){
-            return "Store decoration package";
         }
 
     }
@@ -613,7 +601,7 @@
             alert("请选择主图")
             return false;
         }
-        if($("#fileImage1").attr("src")==""){
+        if($("#fileImage2").attr("src")==""){
             alert("请选择封面")
             return false;
         }

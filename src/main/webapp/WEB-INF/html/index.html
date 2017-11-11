@@ -7,7 +7,7 @@
     <base id="base" href="${base}">
     <title>YOUNGS GROUP</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="pingback" href="http://www.youngs-group.com/wordpress/xmlrpc.php" />
+   <!-- <link rel="pingback" href="http://www.youngs-group.com/wordpress/xmlrpc.php" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <style type="text/css">
         img.wp-smiley,
@@ -45,7 +45,7 @@
             $(".carousel").carousel("cycle");
         });
     </script>
-    <script type="text/javascript" src="http://www.youngs-group.com/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+<!--    <script type="text/javascript" src="http://www.youngs-group.com/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>-->
     <style>
     #mute{  display: block;  position: absolute;  right:40px;  bottom: 40px;  font-size:24px;  line-height: 44px;  width: 44px;  text-align: center;  color:#fff;  cursor: pointer;  background-color: transparent;  transition: all 0.3s ease-in-out 0s;  border-radius: 2px;  }
     #mute:hover{  background-color: #fff;  color: #474747;  }
@@ -737,19 +737,20 @@
                         <div class="col-sm-1"></div>
                         <div class="col-sm-10">
                             <div class="m">
-                                <video id="my-video" class="video-js" controls preload="auto" poster="${base}/images/banner.jpg" data-setup="{}" controls>
+                                <video id="my-video111" class="video-js"controls preload="auto" poster="${base}/images/banner.jpg" data-setup="{}" >
                                     <source src="${base}/images/oceans.mp4" type="video/mp4">
                                     <p class="vjs-no-js">
                                         To view this video please enable JavaScript, and consider upgrading to a web browser that
                                         <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                                     </p>
                                 </video>
-                                <script src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>
+                               <!--<script src="http://vjs.zencdn.net/5.18.4/video.min.js"></script>-->
+                               <script src="${base}/js/video.min.js"></script>
                                 <script type="text/javascript">
-                                    var myPlayer = videojs('my-video');
-                                    videojs("my-video").ready(function(){
+                                   var myPlayer = videojs('my-video111');
+                                    videojs("my-video111").ready(function(){
                                         var myPlayer = this;
-                                        myPlayer.play();
+                                        //myPlayer.play();
                                     });
                                 </script>
                             </div>
