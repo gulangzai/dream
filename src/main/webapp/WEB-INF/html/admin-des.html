@@ -195,7 +195,7 @@
             </select>
             <span class="p-wz">第几屏展示</span>
             <select name="dimension" id="dimension">
-                <option value="2" <#if product.dimension==2>selected</#if>>第一屏2</option>
+                <option value="2" <#if product.dimension==2>selected</#if>>第一屏</option>
                 <option value="3" <#if product.dimension==3>selected</#if>>第二屏</option>
             </select>
         </p>
@@ -432,25 +432,23 @@
             return false;
         }
         var en_type,type;
+
         if(zh_type=="城市形象"){
             en_type = "City Image";
             type = 1;
-        }else if(zh_type=="品牌全案"){
+        }else if(zh_type=="品牌策划"){
             en_type = "Brand planning";
             type = 2;
-        }else if(zh_type=="品牌平面设计"){
+        }else if(zh_type=="品牌平面视觉"){
             en_type = "Brand Graphic vision";
             type = 3;
-        }else if(zh_type=="品牌互联网设计"){
+        }else if(zh_type=="品牌互联网视觉"){
             en_type = "Brand internet vision";
             type = 4;
-        }else if(zh_type=="品牌空间设计"){
+        }else if(zh_type=="品牌空间视觉"){
             en_type = "Brand space vision";
             type = 5;
-        }/*else if(zh_type=="制作和施工"){
-        	en_type = "construction";
-            type = 6;
-        }*/
+        }
  
 
         console.info($("#imgs").val());
