@@ -167,13 +167,14 @@ public class ProductService {
         product.setIsHomePage(isHomePage);
         if(isHomePage==0)
             num=0;
-        product.setNum(num);
+
         int time = (int)(System.currentTimeMillis()/1000);
         product.setTime(time);
         if(isHomePage==1 && num>0){
             productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
         }
         System.out.println(num+" ,,,,,,,,,,,,,,,,,");
+        product.setNum(num);
         Serializable id = productDao.save(product);
         for(String img : productImgs){
             ProductImg productImg = new ProductImg();
@@ -267,8 +268,8 @@ public class ProductService {
             product.setImgUrl(imgUrl);
             product.setPicUrl(picUrl);
             product.setIsHomePage(isHomePage);
-            if(isHomePage==0)
-                num=0; 
+            if(isHomePage==0) 
+                num=0;  
             if(isHomePage==1 && num>0){
                 productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
             }
