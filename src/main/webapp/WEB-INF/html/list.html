@@ -1120,9 +1120,10 @@
                 console.log(data)
                 var list2 = "";
                 $.each(data,function (i,n) {
-                 //   alert(n.id)
+
+                    var _id = (n.id);
                     list2 = list2 +  "<div class='col-sm-4 main-li'>"+
-                        "<a href='/dream/productInfo/'"+n.id+">"+
+                        "<a target='_blank' href='/dream/productInfo/"+_id+"'>"+
                         "<div class='top-image'>"+
                         "<img src='"+n.imgUrl+"'>"+
                         "</div>"+
