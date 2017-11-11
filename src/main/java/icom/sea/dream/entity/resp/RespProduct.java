@@ -15,6 +15,7 @@ public class RespProduct {
     private String label3;
     private String descript;
     private String imgUrl;
+    private String picUrl;
     private Integer dimension;
     private Integer isHomePage;
     private Integer num;
@@ -32,6 +33,7 @@ public class RespProduct {
  
         this.descript = lang.equals("en")?product.getEn_descript():product.getZh_descript();
         this.imgUrl = product.getImgUrl();
+        this.picUrl = product.getPicUrl();
         this.dimension = product.getDimension();
         this.isHomePage = product.getIsHomePage();
         this.num = product.getNum();
@@ -140,5 +142,13 @@ public class RespProduct {
 
     public void setTime(Integer time) {
         this.time = time;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }
