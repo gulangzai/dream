@@ -25,9 +25,9 @@
                 <span class="first">请选择作品类别（单选）：</span>
                 <span data-id="1" >城市形象</span> <!--class="active"-->
                 <span data-id="2">品牌策划</span>
-                <span data-id="3">品牌平面设计</span>
-                <span data-id="4">品牌互联网设计</span>
-                <span data-id="5">品牌空间设计</span>
+                <span data-id="3">品牌平面视觉</span>
+                <span data-id="4">品牌互联网视觉</span>
+                <span data-id="5">品牌空间视觉</span>
 
                 
             </p>
@@ -41,14 +41,14 @@
                 <span>特色小镇研究</span>
             </p>
             <p  data-id="2" class="three-2 tubi-none display-none clearfix">
-               <span class="first">品牌全案</span>
+               <span class="first">品牌策划</span>
                 <span>市场调查</span>
                 <span>消费者研究</span>
                 <span>品牌定位</span>
                 <span>品牌命名</span>
             </p>
             <p  data-id="3" class="three-3 tubi-none display-none clearfix">
-                <span class="first">品牌平面设计</span>
+                <span class="first">品牌平面视觉</span>
                 <span>logo设计</span>
                 <span>VI设计</span>
                 <span>产品包装</span>
@@ -56,13 +56,13 @@
                 <span>书册</span>
             </p>
             <p  data-id="4" class="three-4 tubi-none display-none clearfix">
-                <span class="first">品牌互联网设计</span>
+                <span class="first">品牌互联网视觉</span>
                 <span>网站</span>
                 <span>APP</span>
                 <span>H5</span>
             </p>
             <p  data-id="5" class="three-5 tubi-none display-none clearfix">
-                <span class="first">品牌空间设计</span>
+                <span class="first">品牌空间视觉</span>
                 <span>主题空间</span>
                 <span>导视</span>
                 <span>空间装置</span> 
@@ -614,21 +614,18 @@
         if(zh_type=="城市形象"){
             en_type = "City Image";
             type = 1;
-        }else if(zh_type=="品牌全案"){
+        }else if(zh_type=="品牌策划"){
             en_type = "Brand planning";
             type = 2;
-        }else if(zh_type=="品牌平面设计"){
+        }else if(zh_type=="品牌平面视觉"){
             en_type = "Brand Graphic vision";
             type = 3;
-        }else if(zh_type=="品牌互联网设计"){
+        }else if(zh_type=="品牌互联网视觉"){
             en_type = "Brand internet vision";
             type = 4;
-        }else if(zh_type=="品牌空间设计"){
+        }else if(zh_type=="品牌空间视觉"){
             en_type = "Brand space vision";
             type = 5;
-        }else if(zh_type=="制作和施工"){
-        	en_type = "construction";
-            type = 6;
         }
         
         console.info($("#imgs").val());
