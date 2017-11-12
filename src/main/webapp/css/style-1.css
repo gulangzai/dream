@@ -5784,7 +5784,7 @@ a:hover, a:focus {
     outline: 0px auto -webkit-focus-ring-color;
 }
 .page-p p{ margin-bottom:1em;}
-.bus-mian p{ color:#666; font-family: Helvetica; font-size: 18px;}
+.bus-mian p{ color:#666; font-family: Helvetica; font-size: 18px;} 
 .bus-middle h4{font-family:Helvetica; color:#666; font-weight: 600; letter-spacing: 1px; }
 .bus-middle p{ color:#666; font-family: Helvetica;font-size: 16px;    font-weight: 100;}
 .about-list{ margin-bottom:50px;}
