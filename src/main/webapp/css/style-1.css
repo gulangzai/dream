@@ -3639,6 +3639,17 @@ h1.page-title {
     padding: 0 0 8px;
 }
 
+h1.page-title2 {
+    position: relative;
+    font-size: 2.1428em;
+    font-weight: 400;
+    color: #474747;
+    text-transform: none;
+    line-height: 1.4em;
+    margin: 0 0 12px;
+    padding: 0 0 8px;
+}
+
 h1.page-title:before,
 .page-subtitle:before {
     position: absolute;
@@ -5800,4 +5811,5 @@ a:hover, a:focus {
 .bus-mian p{ color:#666; font-family: Helvetica; font-size: 18px;}
 .bus-middle h4{font-family:Helvetica; color:#666; font-weight: 600; letter-spacing: 1px; }
 .bus-middle p{ color:#666; font-family: Helvetica;font-size: 16px;    font-weight: 100;}
+.bus-mian2 p{ color:#666; font-family: Helvetica; font-size: 18px;}
 .about-list{ margin-bottom:50px;}
