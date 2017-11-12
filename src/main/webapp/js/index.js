@@ -7,10 +7,17 @@ $(function () {
         $(this).find(".tubi").stop().toggle(500)
 
     })
-    $(".tubi-ul li").bind("click", function () {
+    /*$(".tubi-ul li").bind("click", function () {
         var data_id = $(this).attr("data-id");
         $(".tubi-ul li").removeClass('active');
         $(".tubi-ul li[data-id = '"+data_id+"']").addClass('active');
+        $(".main-list").addClass('display-none');
+        $(".main-list[data-id = '"+data_id+"']").removeClass('display-none');
+    });*/
+    $(".portfolio-filter li").bind("click", function () {
+        var data_id = $(this).attr("data-id");
+        $(".portfolio-filter li").removeClass('selected');
+        $(".portfolio-filter li[data-id = '"+data_id+"']").addClass('selected');
         $(".main-list").addClass('display-none');
         $(".main-list[data-id = '"+data_id+"']").removeClass('display-none');
     });

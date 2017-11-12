@@ -200,7 +200,7 @@
 
         .dark .portfolio-filter li.filter:hover,
         .dark .portfolio-filter li.filter.selected {
-            color: #f36f21;
+            color: #00ddb8;
         }
 
         .portfolio-item .mega-hover {
@@ -342,7 +342,8 @@
                     <li class="  section_navi  dropdown menu-item menu-item-depth-0 menu-item-page menu-item-edit-inactive " data-menuanchor="panelBlock3" data-menuanchor_idx="3"><a href="${base}/index#panelBlock3"><@spring.message "shouye_menu3"/></a></li>
                     <li class="  section_navi  dropdown menu-item menu-item-depth-0 menu-item-page menu-item-edit-inactive " data-menuanchor="panelBlock4" data-menuanchor_idx="4"><a href="${base}/index#panelBlock4"><@spring.message "shouye_menu4"/></a></li>
                     <li class="  section_navi  dropdown menu-item menu-item-depth-0 menu-item-page menu-item-edit-inactive " data-menuanchor="panelBlock5" data-menuanchor_idx="5"><a href="${base}/index#panelBlock5"><@spring.message "shouye_menu5"/></a></li>
-                    <li class="  section_navi  dropdown menu-item menu-item-depth-0 menu-item-page menu-item-edit-inactive " data-menuanchor="panelBlock6" data-menuanchor_idx="6"><a href="${base}/index#panelBlock6"><@spring.message "shouye_menu6"/></a></li>
+                        <li class="  section_navi  dropdown menu-item menu-item-depth-0 menu-item-page menu-item-edit-inactive " data-menuanchor="panelBlock6" data-menuanchor_idx="6"><a href="${base}/index#panelBlock6"><@spring.message "shouye_menu6"/></a></li>
+
                 </ul>
             </nav>
             <!--Navigation Menu End-->
@@ -361,7 +362,7 @@
         <div class="fit-screen-wrap">
             <div class="container">
                 <div class="page-header-wrap animate-fadeIn" style="opacity: 1;">
-                    <h2 class="featured-area-title" style="font-family: 'Helvetica bold'; font-weight:600; font-size:2.6em;"><!--OUR WORK--><@spring.message "worklist1"/></h2>
+                    <h2 class="featured-area-title" style="font-family: Helvetica; font-weight:600; font-size:2.6em;"><!--OUR WORK--><@spring.message "worklist1"/></h2>
                     <div data-height="20" style="height: 20px;"></div>
                     <div class="featured-area-subtitle"style="text-transform: uppercase; color:#ccc;font-family: 'Helvetica bold'"><!--LOCATE THE RIGHT DIRECTION,AND CONTROL EVERY DETAIL--><@spring.message "worklist2"/></div>
                 </div>
@@ -397,20 +398,20 @@
                                     }
                                 </style>
                                 <p></p>
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <ul class="tubi-ul clearfix">
-                                            <a href="javascript:list2(0)"><li data-id="1" class="active"><!--ALL Work--><@spring.message "worklist4"/></li></a>
-                                            <li class="tubi-li">/</li>
-                                            <a href="javascript:list2(1)"><li data-id="2"><!--City Image--><@spring.message "worklist5"/></li></a>
-                                            <li class="tubi-li">/</li>
-                                            <a href="javascript:list2(2)"><li data-id="3"><!--Brand planning--><@spring.message "worklist6"/></li></a>
-                                            <li class="tubi-li">/</li>
-                                            <a href="javascript:list2(3)"><li data-id="4"><!--Brand Graphic vision--><@spring.message "worklist7"/></li></a>
-                                            <li class="tubi-li">/</li>
-                                            <a href="javascript:list2(4)"><li data-id="5"><!--Brand internet vision--><@spring.message "worklist8"/></li></a>
-                                            <li class="tubi-li">/</li>
-                                            <a href="javascript:list2(5)"><li data-id="6"><!--Brand space vision--><@spring.message "worklist9"/></li></a>
+                                <div class="portfolio-page">
+                                    <div class="portfolio-filter">
+                                        <ul>
+                                           <!--<a class="apic" href="javascript:list2(0)">--><li class="selected filter" onclick="list2(1)" data-id="1"><!--ALL Work--><@spring.message "worklist4"/></li><!--/</a>-->
+                                         <!--   <li class="tubi-li">/</li>-->
+                                            <!--<a class="apic" href="javascript:list2(1)">--><li class="filter" onclick="list2(2)" data-id="2"><@spring.message "worklist5"/></li>/
+                                            <!--<li class="tubi-li">/</li>-->
+                                            <!--<a class="apic" href="javascript:list2(2)">--><li class="filter" onclick="list2(3)" data-id="3"><!--Brand planning--><@spring.message "worklist6"/></li><!--/</a>-->
+                                          <!--  <li class="tubi-li">/</li>-->
+                                            <!--<a class="apic" href="javascript:list2(3)">--><li class="filter" onclick="list2(4)" data-id="4"><!--Brand Graphic vision--><@spring.message "worklist7"/></li><!--/</a>-->
+                                           <!-- <li class="tubi-li">/</li>-->
+                                            <!--<a class="apic" href="javascript:list2(4)">--><li class="filter" onclick="list2(5)" data-id="5"><!--Brand internet vision--><@spring.message "worklist8"/></li><!--/</a>-->
+                                           <!-- <li class="tubi-li">/</li>-->
+                                           <!-- <a class="apic" href="javascript:list2(5)">--><li class="filter" onclick="list2(6)" data-id="6"><!--Brand space vision--><@spring.message "worklist9"/></li><!--</a>-->
                                         </ul>
                                     </div>
                                 </div>
@@ -1106,6 +1107,7 @@
 <script type="text/javascript" src="${base}/js/waypoints.min.js?ver=5.0"></script>
 <script>
     $(function () {
+
         list2(0);
     })
     function list2(type) { 

@@ -250,6 +250,7 @@ jQuery(document).ready(function() {
                 autoScrolling: customScroll,
                 scrollOverflow: customScroll,
                 fitToSection:false,
+                lockAnchors:true,
                 resize: false,
                 anchors: [sections_perma+'1', sections_perma+'2', sections_perma+'3', sections_perma+'4', sections_perma+'5', sections_perma+'6', sections_perma+'7', sections_perma+'8', sections_perma+'9', sections_perma+'10', sections_perma+'11', sections_perma+'12', sections_perma+'13', sections_perma+'14', sections_perma+'15', sections_perma+'16', sections_perma+'17', sections_perma+'18', sections_perma+'19', sections_perma+'20', sections_perma+'21', sections_perma+'22', sections_perma+'23', sections_perma+'24', sections_perma+'25', sections_perma+'26', sections_perma+'27', sections_perma+'28', sections_perma+'29', sections_perma+'30', sections_perma+'55'],
                 menu: '.nav-menu',

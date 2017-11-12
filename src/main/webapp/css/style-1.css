@@ -2572,9 +2572,9 @@ and (min-resolution: 192dpi) {
     position: relative;
     display: inline;
     max-width: inherit;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 500;
-    color: #474747;
+    color: #838383;
     padding: 0 18px;
     background-color: transparent;
 
@@ -2591,6 +2591,19 @@ and (min-resolution: 192dpi) {
 }
 
 .portfolio-filter li.filter:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 11px;
+    height: 17px;
+    margin-top: -1px;
+    margin-right: -8px;
+    background: url(../images/filter-breadcrumb.png) no-repeat;
+}
+
+
+.portfolio-filter a.apic:after {
     position: absolute;
     content: '';
     top: 0;
@@ -2692,7 +2705,7 @@ and (min-resolution: 192dpi) {
 }
 
 .dark .portfolio-filter li.filter {
-    color: #a7a7a7;
+    color: #838383;
 }
 
 .dark .portfolio-filter li.filter:hover,
@@ -5687,10 +5700,10 @@ img.aligncenter,
 .image-li .tubi a{ display: block; width:40px; height:40px; border-radius: 50%; background:#00aef0; line-height: 40px; text-align:center; margin:0 auto; color:#fff;}
 .image-li .tubi a:hover{ color:#fff; text-decoration: none;}
 .display-none{ display:none;}
-.tubi-ul{ width: 77rem; margin: 0 auto;}
+.tubi-ul{ width: 87rem; margin: 0 auto;}
 .tubi-ul li{ float: left;  letter-spacing: 0px; cursor: pointer; color:#838383; font-weight: 500; font-size: 16px;}
 .tubi-ul li.active{ color:#00ddb8;}
-.tubi-ul li.tubi-li{padding: 0 1rem;}
+.tubi-ul li.tubi-li{padding: 0 2rem;}
 .main-list{ margin-top: 5rem; margin-bottom: 6rem;  padding: 0 7%;}
 .list-main a{color:#000000; overflow: hidden; }
 .list-main .main-li{ overflow: hidden;}
