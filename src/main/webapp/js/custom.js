@@ -83,7 +83,7 @@ jQuery(document).ready(function() {
                 slidesNavigation: true,
                 loopHorizontal: true,
                 afterLoad: function(anchorLink, index){
-
+                   
                     var nr=jQuery('.section.footer-panel').attr("data-anchor").match(/\d+/);
                     jQuery('.section.footer-panel').addClass("panel-"+nr);
 
@@ -244,8 +244,7 @@ jQuery(document).ready(function() {
                 }
             });
         }else{
-
-
+      	
             jQuery('#fullpage').fullpage({
                 autoScrolling: customScroll,
                 scrollOverflow: customScroll,
@@ -262,8 +261,7 @@ jQuery(document).ready(function() {
                     var nr=jQuery('.section.footer-panel').attr("data-anchor").match(/\d+/);
                     jQuery('.section.footer-panel').addClass("panel-"+nr);
 
-                    //jQuery(window).trigger('resize')
-
+                    //jQuery(window).trigger('resize') 
                     if(index == 2){
                         jQuery('.panel-2 .animate-fadeIn').animate({ opacity: 1 }, 1500, 'easeOutExpo');
                         jQuery('.panel-2 .animate-fadeInUp, .panel-2 .animate-fadeInDown').animate({ top: '0', opacity: 1 }, 1500, 'easeOutExpo');
