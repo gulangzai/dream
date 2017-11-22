@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8"/>
     <base id="base" href="${base}">
-    <title>YOUNGS GROUP</title>
+    <title>future design</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="generator" content="WordPress 4.7.7"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -1116,7 +1116,7 @@
     function list2(type) { 
         $.ajax({
             type: "GET",
-            url: "/dream/list2",
+            url: "${base}/list2",
             dataType: "json",
             data: {
                 type: type
@@ -1128,7 +1128,7 @@
 
                     var _id = (n.id);
                     list2 = list2 +  "<div class='col-sm-4 main-li'>"+
-                        "<a target='_blank' href='/dream/productInfo/"+_id+"'>"+
+                        "<a target='_blank' href='${base}/productInfo/"+_id+"'>"+
                         "<div class='top-image'>"+
                         "<img src='"+n.imgUrl+"'>"+
                         "</div>"+

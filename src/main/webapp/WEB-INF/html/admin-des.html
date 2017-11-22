@@ -469,7 +469,7 @@
         });
         $.ajax({
             type : "POST",
-            url : "/dream/add",
+            url : "${base}/add",
             dataType : "json",
             data : {
                 en_title : $("#en_title").val(),     //英文标题
@@ -498,7 +498,7 @@
                 //   $("#result").html(data)
                 $("#result").text(JSON.stringify(data))
                 alert("添加成功")
-                location.href="/dream/admin-list"
+                location.href="${base}/admin-list"
             }
         });
     }
@@ -678,7 +678,7 @@
                 //   $("#result").html(data)
                 $("#result").text(JSON.stringify(data))
                 alert("编辑成功")
-                location.href="/dream/admin-list"
+                location.href="${base}/admin-list"
             }
         });
     }

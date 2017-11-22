@@ -110,7 +110,7 @@ public class ProductController {
         return "list";
     }
 
-    @RequestMapping("/list2")
+    @RequestMapping(value = "/list2",produces = "application/jso;charset=UTF-8")
     @ResponseBody
     public List<RespProduct> list2(Integer type, HttpSession session){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
@@ -123,7 +123,7 @@ public class ProductController {
      * @param model
      * @return
      */
-    @RequestMapping("/productInfo/{id}")
+    @RequestMapping(value = "/productInfo/{id}",produces  = "text/html;charset=UTF-8")
     public String productInfo(@PathVariable int id,HttpSession session, Model model){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
         model = productService.productInfo(lang,id, model);
