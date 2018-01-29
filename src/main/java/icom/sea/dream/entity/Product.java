@@ -1,5 +1,7 @@
 package icom.sea.dream.entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +13,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name="product")
+@DynamicUpdate
 public class Product implements Serializable{
     private Integer id;
     private String en_title;

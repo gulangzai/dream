@@ -13,7 +13,7 @@
 <div class="des">
     <div class="list-main">
         <a href="${base}/index">未来设计</a>
-        <a class="active" href="${base}/admin-list">作品列表</a>
+        <a class="active" href="javascript:void(0)" onclick="list()">作品列表</a>
     </div>
 </div>
 <div class="des-main">
@@ -179,7 +179,7 @@
             
             </label>
           <!-- <label><input type="radio" name="radio">否</label>- -->
-            <span class="p-wz">放置位置</span>
+            <span class="p-wz">放置位置${product.num}</span>
             <select name="num" id="num">
                 <option value="1" <#if product.num==1>selected</#if>>1</option>
                 <option value="2" <#if product.num==2>selected</#if>>2</option>
@@ -683,6 +683,33 @@
         });
     }
 
+    function list() {
+        var zh_type = "";
+        $.each( $(".des-main .main-list .list-top p.one span"),function(index,n){
+            if($(this).hasClass("active")){
+                zh_type=$(this).text();
+            }
+        });
+        var en_type,type;
+
+        if(zh_type=="城市形象"){
+            en_type = "City Image";
+            type = 1;
+        }else if(zh_type=="品牌策划"){
+            en_type = "Brand planning";
+            type = 2;
+        }else if(zh_type=="品牌平面视觉"){
+            en_type = "Brand Graphic vision";
+            type = 3;
+        }else if(zh_type=="品牌互联网视觉"){
+            en_type = "Brand internet vision";
+            type = 4;
+        }else if(zh_type=="品牌空间视觉"){
+            en_type = "Brand space vision";
+            type = 5;
+        }
+        location.href=" ${base}/admin-list?type="+type;
+    }
  
 </script>
 </body> 

@@ -110,7 +110,7 @@ public class ProductController {
         return "list";
     }
 
-    @RequestMapping(value = "/list2",produces = "application/jso;charset=UTF-8")
+    @RequestMapping(value = "/list2",produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<RespProduct> list2(Integer type, HttpSession session){
         String lang = null == session.getAttribute("lang")?"en":session.getAttribute("lang")+"";
@@ -155,6 +155,7 @@ public class ProductController {
     public String adminList(@RequestParam(defaultValue = "1")Integer type,
             @RequestParam(defaultValue = "1") int currentPage,
             @RequestParam(defaultValue = "20") int pageSize,Model model,HttpSession session){
+        model.addAttribute("type",type);
      return "admin-list";
     }
     

@@ -125,9 +125,15 @@
 <script type="text/javascript" src="${base}/js/jquery-1.9.1.min.js"></script>
 <script>
     $(function () {
-        list2(1);
+
+        list2("${type}");
     })
     function list2(type) {
+       var $li = $("ul li")
+       // alert($li.length)
+        $("ul li a").removeClass("active")
+        n = type - 1
+        $("ul li :eq("+n+") a").addClass("active")
         $.ajax({
             type: "GET",
             url: "${base}/adminData",

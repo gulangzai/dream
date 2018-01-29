@@ -272,8 +272,10 @@ public class ProductService {
                 num=0;  
             if(isHomePage==1 && num>0){
                 productDao.update("update Product set num=0 where dimension=? and num=?",dimension,num);
+                productDao.update("update Product set num=? where id=?",num,product.getId());
             }
-            product.setNum(num);
+            System.err.println(num);
+          //  product.setNum(num);
             productDao.update(product);
             List<ProductImg> productImgsList = productDao.find("from ProductImg where productId=?",id);
             if(null != productImgsList && productImgsList.size()>0){
